@@ -1,31 +1,30 @@
-/* Global Styles */
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    cursor: url("starter-northern-lights-cursor.png"), auto;
+    font-family: myfont;
+    cursor: url("starter-northern-lights-cursor.png"),auto;
     overflow: hidden;
+    
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+#model{
+    z-index: 0;
+    position: absolute;
+    top: 0vh;
+    right: -25vw;
 }
 
-/* Video Background */
-.bg-video {
-    position: fixed;
+* a{
+    cursor: url("starter-northern-lights-pointer.png"),auto;
+}
+
+.video-background {
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100vw; 
+    height: 100vh; 
     z-index: -1;
     overflow: hidden;
 }
@@ -33,30 +32,36 @@ body {
 video {
     position: absolute;
     top: 0%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-}
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; }
 
-/* Content and Timeline */
-.content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
 
-.name {
-    position: absolute;
-    color: #ffffff;
-    top: 6vh;
-    left: 8vw;
-    font-size: calc(2vh + 1.5vw);
+@font-face{
     font-family: myfont;
+    src: url(Warpen.otf);
 }
 
-.navbar {
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 3s linear;
+}
+
+.navbar{
     display: flex;
     position: fixed;
     top: 2vh;
@@ -68,12 +73,12 @@ video {
 }
 
 .navbar a {
-    position: relative;
+    position: relative; 
     text-decoration: none;
     padding: 1.5vw;
     font-size: calc(.8vh + .6vw);
     color: #ffffff;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    animation: blureffect2 2s linear;
 }
 
 .navbar a::after {
@@ -98,34 +103,52 @@ video {
     color: #00b3ff;
 }
 
-/* Timeline */
+.name{
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size:calc(2vh + 1.5vw);
+    font-family: myfont;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .timeline {
     width: 50vw;
     position: absolute;
     padding: 2vh;
+    margin: 0 auto; /* Centers the timeline horizontally */
     left: 7vw;
     top: 25vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
+
 
 .timeline-item {
     display: flex;
-    margin-bottom: 5vh;
+    margin-bottom: 8vh;
     align-items: flex-start;
 }
 
 .timeline-year {
-    width: 12vw;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 10vw;
     font-size: calc(1vh + 1vw);
     font-weight: bold;
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     background: linear-gradient(#00b3ff, #00fff7);
     padding: 1vh;
     border-radius: 5px;
-    margin-right: 2vw;
 }
 
 .timeline-content {
@@ -134,46 +157,40 @@ video {
     padding-left: 2vw;
     border-left: 2px solid #9a9a9a;
     position: relative;
-    color: #f0f0f0;
 }
 
 .timeline-content::before {
+    z-index: 99;
     content: '';
     position: absolute;
-    top: -.5vh;
+    top: -.5vh; /* Move the dot above the line */
     left: -1vw;
     width: 2.2vw;
     height: 2.7vh;
     background-color: #00b3ff;
-    border-radius: 50%;
-    box-shadow: 0 0 3px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00fff7, 0 0 40px #00fff7;
+    border-radius: 10%;
+    box-shadow: 0 0 3px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00fff7, 0 0 40px #00fff7; 
 }
 
 .institution-name {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: calc(1vh + 1vw);
     font-weight: bold;
     color: #ffffff;
+    margin: 0;
 }
 
 .location {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: calc(.8vh + .6vw);
     color: #d0d0d0;
     margin: 5px 0;
 }
 
 .description {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: calc(.8vh + .6vw);
     color: #b0b0b0;
     line-height: 1.6;
     margin: 10px 0 0;
-}
-
-/* 3D Viewer */
-#model {
-    position: absolute;
-    top: 0;
-    right: -20vw;
-    z-index: 0;
-    width: 50vw;
-    height: 50vh;
 }
