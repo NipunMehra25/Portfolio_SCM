@@ -13,7 +13,7 @@
     }
 }
 
-/* Magnetic button style */
+/* Magnetic button style - Creates an interactive button with special effects */
 .magnetic-link {
     position: relative;
     display: inline-block;
@@ -27,7 +27,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Magnetic hover background effect */
+/* Magnetic hover background effect - Adds a black background that scales on hover */
 .magnetic-link::before {
     content: "";
     position: absolute;
@@ -43,28 +43,28 @@
     z-index: -1;
 }
 
-/* Hover style for magnetic link */
+/* Hover style for magnetic link - Changes to blue on hover */
 .magnetic-link:hover {
     transform: scale(1);
     opacity: 1;
     background: #00b3ff;
 }
 
-/* Override for navbar magnetic link */
+/* Override for navbar magnetic link - Ensures navbar links stay white on hover */
 .navbar .nohover.magnetic-link:hover {
     transform: scale(1);
     opacity: 1;
     background: white;
 }
 
-/* Inner span for magnetic link text */
+/* Inner span for magnetic link text - Ensures text remains visible over effects */
 .magnetic-link span {
     position: relative;
     z-index: 2;
     color: black;
 }
 
-/* Cursor dot style */
+/* Cursor dot style - Creates a small custom cursor dot */
 .cursor-dot {
     position: fixed;
     width: 8px;
@@ -76,7 +76,7 @@
     transform: translate(-50%, -50%);
 }
 
-/* Cursor trail style */
+/* Cursor trail style - Creates a larger follower for the cursor with blend effect */
 .cursor-trail {
     position: fixed;
     width: 40px;
@@ -90,7 +90,7 @@
     transition: background 0.3s ease;
 }
 
-/* Fullscreen flex layout and dark background */
+/* Fullscreen flex layout and dark background - Sets the main page structure */
 html, body {
     height: 100%;
     width: 100%;
@@ -99,7 +99,7 @@ html, body {
     display: flex;
 }
 
-/* Enable scrolling on small screens */
+/* Enable scrolling on small screens - Responsive design for mobile */
 @media (max-width: 768px) {
     html, body {
         overflow-y: auto;
@@ -107,14 +107,14 @@ html, body {
     }
 }
 
-/* Hide overflow on large screens */
+/* Hide overflow on large screens - Prevents scrolling on desktop */
 @media (min-width: 769px) {
     html, body {
         overflow: hidden;
     }
 }
 
-/* Background video container */
+/* Background video container - Positions the video as a background element */
 .video-background {
     top: 0;
     left: 0;
@@ -124,20 +124,20 @@ html, body {
     overflow: hidden;
 }
 
-/* Fullscreen background video */
+/* Fullscreen background video - Makes video cover the entire screen */
 video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Custom font import */
+/* Custom font import - Loads the Warpen font file */
 @font-face {
     font-family: myfont;
     src: url(Warpen.otf);
 }
 
-/* Content animation container */
+/* Content animation container - Holds main content with fade-in effect */
 .content {
     height: 100%;
     width: 100%;
@@ -145,7 +145,7 @@ video {
     position: relative;
 }
 
-/* Mobile hamburger menu button */
+/* Mobile hamburger menu button - Hidden by default, shows on small screens */
 .mobile-menu-btn {
     display: none;
     position: fixed;
@@ -159,7 +159,7 @@ video {
     z-index: 1000;
 }
 
-/* Hamburger menu bars */
+/* Hamburger menu bars - Creates the three lines for the menu icon */
 .mobile-menu-btn .bar {
     height: 3px;
     width: 100%;
@@ -168,7 +168,7 @@ video {
     transition: all 0.3s ease-in-out;
 }
 
-/* Transform bars to X on active state */
+/* Transform bars to X on active state - Animation for menu open/close */
 .mobile-menu-btn.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
 }
@@ -179,14 +179,14 @@ video {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Show mobile menu button on small screens */
+/* Show mobile menu button on small screens - Responsive menu control */
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
     }
 }
 
-/* Back button styling */
+/* Back button styling - Creates a glowing blue-bordered button */
 .back-button {
     z-index: 99;
     display: inline-block;
@@ -204,7 +204,7 @@ video {
     font-family: fonts;
 }
 
-/* Mobile back button adjustment */
+/* Mobile back button adjustment - Repositions for small screens */
 @media (max-width: 768px) {
     .back-button {
         top: auto;
@@ -216,18 +216,18 @@ video {
     }
 }
 
-/* Container for back button */
+/* Container for back button - Provides spacing from edge */
 .back-button-container {
     z-index: 99;
     margin-right: 140px;
 }
 
-/* Back button hover effect */
+/* Back button hover effect - Changes color on mouse over */
 .back-button:hover {
     background-color: #00b3ff;
 }
 
-/* Name header */
+/* Name header - Positions the main title/name */
 .name {
     position: absolute;
     color: #ffffff;
@@ -238,7 +238,7 @@ video {
     pointer-events: none;
 }
 
-/* Mobile name position */
+/* Mobile name position - Centers on small screens */
 @media (max-width: 768px) {
     .name {
         top: 20px;
@@ -250,7 +250,7 @@ video {
     }
 }
 
-/* Navbar layout */
+/* Navbar layout - Positions the navigation menu */
 .navbar {
     display: flex;
     position: fixed;
@@ -263,7 +263,7 @@ video {
     stroke: black;
 }
 
-/* Mobile navbar slide-in */
+/* Mobile navbar slide-in - Creates off-canvas menu for mobile */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -290,7 +290,7 @@ video {
     }
 }
 
-/* Navbar link styling */
+/* Navbar link styling - Sets text appearance for nav items */
 .navbar a {
     position: relative;
     text-decoration: none;
@@ -300,7 +300,7 @@ video {
     animation: blureffect2 2s linear;
 }
 
-/* Hover underline effect */
+/* Hover underline effect - Animates underline on hover */
 .navbar a:hover::after {
     width: 100%;
     left: 0;
@@ -308,7 +308,7 @@ video {
     color: white;
 }
 
-/* Photo styling */
+/* Photo styling - Positions the circular profile image/video */
 .photo {
     position: absolute;
     top: 15vh;
@@ -320,7 +320,7 @@ video {
     transition: transform 0.5s ease;
 }
 
-/* Mobile image resizing */
+/* Mobile image resizing - Makes image smaller on small screens */
 @media (max-width: 768px) {
     .photo {
         position: relative;
@@ -339,18 +339,18 @@ video {
     }
 }
 
-/* Video inside photo container */
+/* Video inside photo container - Ensures video fills circular container */
 .photo video {
     height: 100%;
     width: 100%;
 }
 
-/* Zoom on hover */
+/* Zoom on hover - Enlarges photo when mouse hovers */
 .photo:hover {
     transform: scale(1.2);
 }
 
-/* Text block beside photo */
+/* Text block beside photo - Positions the main content text */
 .text {
     position: absolute;
     color: #ffffff;
@@ -359,7 +359,7 @@ video {
     pointer-events: none;
 }
 
-/* Mobile text centering */
+/* Mobile text centering - Repositions text for small screens */
 @media (max-width: 768px) {
     .text {
         position: relative;
@@ -373,7 +373,7 @@ video {
     }
 }
 
-/* Paragraph font size */
+/* Paragraph font size - Responsive text sizing */
 .text p {
     font-size: calc(1vh + 1vw);
 }
@@ -384,13 +384,13 @@ video {
     }
 }
 
-/* Highlighted heading */
+/* Highlighted heading - Blue accent color for headings */
 .h1 {
     padding: .5vh;
     color: #00b3ff;
 }
 
-/* Social media icon container */
+/* Social media icon container - Positions social links */
 .social-media {
     position: absolute;
     left: 10vw;
@@ -398,7 +398,7 @@ video {
     height: 10vh;
 }
 
-/* Mobile responsive icons */
+/* Mobile responsive icons - Centers icons on small screens */
 @media (max-width: 768px) {
     .social-media {
         position: relative;
@@ -410,7 +410,7 @@ video {
     }
 }
 
-/* Container for feedback and back buttons */
+/* Container for feedback and back buttons - Positions action buttons */
 .back-feedback-container {
     position: absolute;
     bottom: 1vh;
@@ -425,7 +425,7 @@ video {
     box-shadow: 0 0 25px #00b3ff;
 }
 
-/* Responsive feedback container */
+/* Responsive feedback container - Adjusts for mobile layout */
 @media (max-width: 768px) {
     .back-feedback-container {
         position: relative;
@@ -438,7 +438,7 @@ video {
     }
 }
 
-/* Feedback button style */
+/* Feedback button style - Sets appearance for feedback button */
 .feedback-btn {
     color: rgb(230, 224, 224);
     text-decoration: none;
@@ -452,7 +452,7 @@ video {
     gap: 0.8vw;
 }
 
-/* Responsive font for feedback */
+/* Responsive font for feedback - Smaller text on mobile */
 @media (max-width: 768px) {
     .feedback-btn {
         font-size: 16px;
@@ -460,6 +460,7 @@ video {
     }
 }
 
+/* Icon sizing for feedback button */
 .feedback-btn i {
     font-size: calc(1.5vh + 1vw);
 }
@@ -470,14 +471,14 @@ video {
     }
 }
 
-/* Hover effect */
+/* Hover effect - Animation for feedback button on hover */
 .feedback-btn:hover {
     background-color: #00b3ff;
     color: black;
     transform: scale(1.1);
 }
 
-/* Social media icon links */
+/* Social media icon links - Creates circular icon buttons */
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -500,12 +501,12 @@ video {
     }
 }
 
-/* Zoom on hover */
+/* Zoom on hover - Enlarges social icons when hovered */
 .social-media a:hover {
     transform: scale(1.2);
 }
 
-/* Mail button style */
+/* Mail button style - Creates glowing email button */
 .mail {
     position: absolute;
     left: 10vw;
@@ -518,13 +519,13 @@ video {
     transition: transform 0.1s ease;
 }
 
-
+/* Hover effect for email link */
 .mail a:hover {
     background-color: black;
     transform: scale(1.2);
 }
 
-/* Responsive email button */
+/* Responsive email button - Centers on mobile */
 @media (max-width: 768px) {
     .mail {
         position: relative;
@@ -538,7 +539,7 @@ video {
     }
 }
 
-/* Email text style */
+/* Email text style - Sets font size and padding for email link */
 .mail a {
     padding: .6vh;
     font-size: calc(2.5vh + 2.5vw);
@@ -554,9 +555,7 @@ video {
     }
 }
 
-
-
-/* Feedback button */
+/* Feedback button - Creates a fixed-position feedback button */
 #feedback {
     display: flex;
     align-items: center;
@@ -577,7 +576,7 @@ video {
     width: 11vw;
 }
 
-/* Mobile feedback button */
+/* Mobile feedback button - Repositions for small screens */
 @media (max-width: 768px) {
     #feedback {
         position: relative;
@@ -590,7 +589,7 @@ video {
     }
 }
 
-/* Inner text for feedback */
+/* Inner text for feedback - Sets text appearance inside button */
 .feedback-in {
     padding: 3vh 1.2vw;
     text-decoration: none;
@@ -607,12 +606,12 @@ video {
     }
 }
 
-/* Hover effect */
+/* Hover effect - Changes color on hover */
 #feedback:hover {
     background-color: #00b3ff;
 }
 
-/* Entry animation */
+/* Entry animation - Fade-in effect for content */
 @keyframes blurEffect {
     0%, 25% {
         opacity: 0;
@@ -622,7 +621,7 @@ video {
     }
 }
 
-/* Exit animation */
+/* Exit animation - Fade-out effect for transitions */
 @keyframes blurEffect2 {
     0%, 25% {
         opacity: 1;
@@ -632,19 +631,19 @@ video {
     }
 }
 
-/* Duplicate hover effect fix */
+/* Duplicate hover effect fix - Ensures consistent hover underline */
 .navbar a:hover::after {
     width: 100%;
     left: 0;
     right: 0;
 }
 
-/* Navbar link hover color */
+/* Navbar link hover color - Text color on mouse over */
 .navbar a:hover {
     color: white;
 }
 
-/* Spline iframe placeholder */
+/* Spline iframe placeholder - Positions 3D model container */
 #sp1 {
     height: 100%;
     width: 100%;
@@ -652,13 +651,14 @@ video {
     left: -200px;
 }
 
-/* Hide spline on mobile */
+/* Hide spline on mobile - Removes 3D model on small screens for performance */
 @media (max-width: 768px) {
     #sp1 {
         display: none;
     }
 }
 
+/* Social media hover effect - Creates inverse color effect on hover */
 .social-media a:hover {
     background: black;
     color: white;
@@ -666,15 +666,15 @@ video {
     border:2px solid white;
 }
 
-
+/* Email link hover effect - Creates contrast with background */
 .mail a:hover {
-    
     background: black;
     color: white;
     border-radius: 90px;
     transform: scale(1.2);
 }
 
+/* Email container hover effect - Changes border and removes glow */
 .mail:hover{
     background-color: black;
     border: 2px solid rgb(255, 255, 255);
@@ -682,17 +682,15 @@ video {
     box-shadow: none;
 }
 
-
+/* Feedback button hover - Changes to white background with black text */
 .feedback-btn:hover{
     color: black;
     background-color: #ffffff;
 }
 
-
-/* Hide spline on mobile */
+/* Hide 3D model on mobile - Improves performance on small screens */
 @media (max-width: 768px) {
     #model {
         display: none;
     }
-  }
-  
+}
