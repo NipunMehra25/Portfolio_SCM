@@ -417,7 +417,6 @@ video {
     background-color: #222;
     color: white;
     border-radius: 12px;
-    cursor: pointer;
     transition: 0.3s ease;
   }
   
@@ -479,19 +478,19 @@ video {
 
 /* Blur Card Style */
 .icon-card {
-  width: 100px;
-  height: 140px;
-  border-radius: 50% / 40%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  background: rgba(255, 255, 255, 0.05);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
+    width: 100px;
+    height: 140px;
+    border-radius: 50% / 40%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  
   .icon-card:hover {
     border-color: rgba(255, 255, 255, 0.4);
     transform: scale(1.05);
@@ -522,7 +521,7 @@ video {
     -webkit-backdrop-filter: blur(12px); /* Safari support */
   
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+
   }
   
   .icon-box:hover {
@@ -542,7 +541,7 @@ video {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: default;
+
     text-align: center;
     margin-top:-14px;
   }
@@ -564,5 +563,240 @@ video {
     font-family: fonts2;
     color: #ccc;
     line-height: 1.8;
+  }
+  
+  @media (min-width: 1200px) {
+    .skills-section {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    .about-box {
+      width: 75%;
+    }
+  
+    .diagram-title {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: 768px) {
+    .skills-options {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  
+    .skill-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  
+    .about-box {
+      width: 90%;
+      margin: 20px auto;
+    }
+  
+    .diagram-title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+    }
+  
+    .skills-options {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 15px;
+    }
+  
+    .skills-display img {
+      width: 45px;
+      height: 45px;
+    }
+  
+    .about-box {
+      width: 95%;
+      padding: 1rem;
+    }
+  
+    .diagram-title {
+      font-size: 2.5rem;
+    }
+  
+    .skill-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+  
+    body {
+      padding-top: 80px; /* Account for fixed navbar height */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+      flex-direction: column;
+      gap: 10px; /* Add spacing between navbar links */
+    }
+  
+    .skills-section {
+      margin: 5px;
+      text-align: center;
+    }
+  
+    .skills-options {
+      gap: 10px; /* Reduce spacing between buttons */
+    }
+  
+    .skill-button {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+    }
+  
+    .skills-display img {
+      width: 35px; /* Smaller icons for small screens */
+      height: 35px;
+    }
+  
+    .about-box {
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    .diagram-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media screen and (orientation: portrait) {
+    .skills-section {
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .skills-options {
+      flex-direction: column;
+      gap: 10px; /* Reduce spacing for portrait view */
+    }
+  
+    .skills-display img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .about-box {
+      text-align: center;
+      width: 90%;
+      padding: 0.5rem;
+    }
+  
+    .diagram-title {
+      font-size: 1.8rem;
+      line-height: 1.2;
+    }
+  }
+  .navbar {
+    display: flex;
+    position: fixed;
+    top: 4%;
+    left: 45%;
+    width: 50%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    font-family: fonts;
+    background: black;
+    border-radius: 17px;
+    border-bottom: 4px solid #ffffff33;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar a {
+    position: relative;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+  
+
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(90deg, rgba(111, 30, 224, 1) 11%, rgba(155, 124, 181, 1) 94%);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Media Queries */
+  
+  /* For tablets */
+  @media (max-width: 1200px) {
+    .navbar {
+      width: 70%;
+      left: 15%;
+      height: auto;
+    }
+  
+    .navbar a {
+      padding: 15px;
+      font-size: 24px;
+    }
+  }
+  
+  /* For small screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      top: 5%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    .navbar a {
+      display: block;
+      font-size: 20px;
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  
+  /* For extra small screens */
+  @media (max-width: 480px) {
+    .navbar {
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 5px 0;
+    }
+  
+    .navbar a {
+      font-size: 16px;
+      padding: 8px 0;
+    }
   }
   

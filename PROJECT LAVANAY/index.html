@@ -49,8 +49,9 @@
             <i class="ri-github-fill"></i>
           </a>
         </div>
-        <div class="photo magnetic-link">
-          <img src="image1122.png" alt="">
+        <div class="photo magnetic-link-skill">
+          <!-- <img src="image1122.png" alt=""> -->
+          <img src="okok4.png" alt="">
         </div>
         
 
@@ -126,6 +127,22 @@ magneticLinks.forEach(link => {
   });
 });
 
+const magneticLinksSkills = document.querySelectorAll('.magnetic-link-skill');
+
+magneticLinksSkills.forEach(link => {
+  link.addEventListener('mousemove', (e) => {
+    const rect = link.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    // Apply the magnetic effect to skill section links
+    link.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+  });
+
+  link.addEventListener('mouseleave', () => {
+    link.style.transform = `translate(0, 0) scale(1)`;
+  });
+});
 
 
 // ===== ⛔ Hide Trail on Any Anchor Hover =====
