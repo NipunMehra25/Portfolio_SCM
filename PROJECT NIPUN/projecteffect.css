@@ -1,0 +1,110 @@
+*{
+    padding:0%;
+    margin: 0%;
+    cursor: url("starter-northern-lights-cursor.png"), auto;
+    font-family: myfont;
+
+}
+
+@font-face{
+    font-family: myfont;
+    src: url(Warpen.otf);
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+section:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#00b3ff,rgb(0, 255, 242));
+    mix-blend-mode: color;
+    pointer-events: none;
+}
+
+h1{
+    position: absolute;
+    top: 40%;
+    left: 17%;
+    text-align: center;
+    justify-content: center;
+    font-size: 100px;
+    color:#00b3ff;
+    
+}
+
+h1 span{
+    opacity: 0;
+    display: inline-block;
+    animation:animate 1s linear forwards;
+}
+
+section video{
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0%;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100%{
+        opacity: 100%;
+        transform: rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+h1 span:nth-child(1)
+{
+    animation-delay: 1.3s;
+}
+h1 span:nth-child(2)
+{
+    animation-delay: 1.6s;
+}h1 span:nth-child(3)
+{
+    animation-delay: 2.1s;
+}h1 span:nth-child(4)
+{
+    animation-delay: 2.6s;
+}
+h1 span:nth-child(5)
+{
+    animation-delay: 3.1s;
+}
+h1 span:nth-child(6)
+{
+    animation-delay: 3.6s;
+}h1 span:nth-child(7)
+{
+    animation-delay: 4.1s;
+}
+
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+.content{
+    animation: fadeout 1s linear 7s forwards;
+}

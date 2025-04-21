@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+.magnetic-link {
+    position: relative;
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    color: black; /* dark text */
+     /* light background */
+    backdrop-filter: blur(5px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .magnetic-link::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #3b1c66; /* ← darker solid purple */
+    border-radius: 12px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: -1;
+}
+
+  
+  .magnetic-link:hover::before {
+    transform: scale(1);
+    opacity: 1;
+    background:#613498;
+
+  }
+  
+  
+  .magnetic-link span {
+    position: relative;
+    z-index: 2;
+    color: black; /* make sure text stays dark */
+  }
+  
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #111; /* or your custom dark background */
+    color: #fff;
+  }
+  
+  
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+  }
+
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1;
+    overflow: hidden;
+}
+.back-button-container {
+    display: flex;
+    /* Use flex for alignment */
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    background-color: rgba(22, 19, 26, 0.7);
+    /* Background color */
+    border: 2px solid #532196;
+    /* Border color */
+    border-radius: 32px;
+    /* Rounded corners */
+    padding: 3vh 2vw;
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+    color: rgb(230, 224, 224);
+    /* Text color */
+    font-size: 20px;
+    /* Font size */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
+    /* animation: bounce 1s infinite; Animation */
+    position: relative;
+    top: 39vh;
+    left: 82vw;
+    font-family: fonts;
+}
+
+.back-button-container {
+    margin-right: 140px;
+    /* Push the back button to the left */
+}
+
+/* Back button hover effect */
+.back-button:hover {
+    background-color: #613498;
+    /* Light purple on hover */
+}
+
+
+video {
+    position: absolute;
+    top: 0%;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; }
+
+
+    
+@font-face{
+    font-family: myfont;
+    src: url(EdsMarketRegularSlant.ttf);
+}
+
+@font-face{
+    font-family: fonts;
+    src: url(Hacked-KerX.ttf);
+}
+
+@font-face{
+    font-family: fonts1;
+    src: url(PastiOblique-7B0wK.otf);
+}
+
+@font-face{
+    font-family: fonts2;
+    src: url(FunkyCoffee-E4XYg.otf);
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+
+
+body{
+    display:flex;width:100vw;height:100vh;justify-content:center;align-items: center;background-size: cover;
+    background:url(standard\ \(2\).gif);
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 4%;
+    left: 45%;
+    width: 50%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    font-family: fonts;
+    background:black;
+    border-radius: 17px;
+    border-color: white;
+    stroke: #fff;
+    border-bottom: 2px solid #ffffff33;
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    z-index:1;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(90deg, rgba(111,30,224,1) 11%, rgba(155,124,181,1) 94%);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+
+.name{
+    position: absolute;
+    color: #ffffff;
+    top: 40px;
+    left: 80px;
+    font-size: 40px;
+    font-family: myfont;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.timeline {
+    width: 600px;
+    position: relative;
+    padding: 20px;
+    margin: 0 auto; /* Centers the timeline horizontally */
+    left: -17vw;
+    top: 7vh;
+}
+
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.timeline-year {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 120px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    background: linear-gradient(#561db8, #7a60af);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.timeline-content {
+    flex-grow: 1;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 2px solid #9a9a9a;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: -7px; /* Move the dot above the line */
+    left: -9.5px;
+    width: 16px;
+    height: 16px;
+    background-color: #5c20a7;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #4e10ba, 0 0 20px #4e2793, 0 0 30px #5019a8, 0 0 40px #4a1a9c; 
+}
+
+.institution-name {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.location {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #d0d0d0;
+    margin: 5px 0;
+}
+
+.description {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: #b0b0b0;
+    line-height: 1.6;
+    margin: 10px 0 0;
+}

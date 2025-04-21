@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: url("starter-northern-lights-cursor.png"),auto;
+}
+
+* a{
+    cursor: url("starter-northern-lights-pointer.png"),auto;
+}
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; }
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(1vh + 1vw);
+    color: #ffffff;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(to right, #e81c1c, #e81c1c);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover {
+    color: #e81c1c;
+}
+
+.name{
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size: calc(2vh + 1.5vw);
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* Body Styling */
+body {
+    height: 100vh;
+    display: flex;
+    perspective: 900px;
+    background-color: black;
+    overflow: hidden; 
+}
+
+/* Scene (Cube Container) */
+.scene {
+    top: 35%;
+    left: 43%;
+    align-items: center;
+    width: 8vw;
+    height: 30vh;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+    transition: transform 1s ease; 
+}
+
+/* Cube Faces */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s ease; 
+}
+
+.face {
+    font-family: "Bebas Neue", sans-serif;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1vh + 1vw);
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    transition: transform 1s ease; 
+    box-shadow: 0 0 20px #e81c1c;
+    
+}
+
+ /* Hover Effect for face1 */
+#face1:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+}
+
+#face2:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+}
+
+#face3:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+}
+
+#face4:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+}
+
+#face5:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+}
+
+#face6:hover {
+    transform: scale(1.3) translateX(0px) translateY(25vh); 
+} 
+
+/* Cube Faces Positioning */
+.front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+.back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+.left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+.right  { transform: rotateY(90deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+.top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+.bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#e81c1c,#e87e61); } 
+
+/* Hover Effect */
+.scene:hover {
+    animation: none; 
+}
+
+.scene:hover .front  { transform: translateX(-37vw); }
+.scene:hover .back   { transform: translateX(-22vw); }
+.scene:hover .left   { transform: translateX(-7vw); }
+.scene:hover .right  { transform: translateX(8vw); }
+.scene:hover .top    { transform: translateX(23vw); }
+.scene:hover .bottom { transform: translateX(38vw); }
+
+/* Return Transition */
+.scene:not(:hover) .front,
+.scene:not(:hover) .back,
+.scene:not(:hover) .left,
+.scene:not(:hover) .right,
+.scene:not(:hover) .top,
+.scene:not(:hover) .bottom {
+    transition: transform 1s ease 5ms; 
+}
+
+/* Animation Restart Delay */
+.scene:not(:hover) {
+    animation: rotate 5s infinite linear 5ms; 
+}
+
+/* Cube Animation */
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

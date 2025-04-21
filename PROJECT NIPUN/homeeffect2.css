@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+  }
+  
+  @font-face {
+    font-family: myfont;
+    src: url(Warpen.otf);
+  }
+  
+  body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    font-family: myfont, sans-serif;
+  }
+  
+/* Cursor dot style */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Cursor trail style */
+.cursor-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+}
+
+  section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#00b3ff, rgb(0, 255, 242));
+    mix-blend-mode: color;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .title {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 8rem); /* Responsive font size */
+    color: #00b3ff;
+    display: flex;
+    gap: 10px;
+  }
+  
+  h1 span {
+    opacity: 0;
+    animation: animate 1s linear forwards;
+  }
+  
+  h1 span:nth-child(1) { animation-delay: 1.8s; }
+  h1 span:nth-child(2) { animation-delay: 2.3s; }
+  h1 span:nth-child(3) { animation-delay: 2.8s; }
+  h1 span:nth-child(4) { animation-delay: 3.3s; }
+  
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+      filter: blur(0px);
+    }
+  }
+  
+  @keyframes fadeout {
+    0%, 50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .content {
+    animation: fadeout 1s linear 7s forwards;
+  }
+  
+  /* --------------------------------- */
+  /* MEDIA QUERIES FOR RESPONSIVENESS */
+  /* --------------------------------- */
+  
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 6rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4.5rem;
+      gap: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3rem;
+      gap: 5px;
+    }
+  
+    .title {
+      padding: 0 10px;
+    }
+  }
+  
+
+
+    /* Hide custom cursor on touch devices */
+    @media (pointer: coarse) {
+      .cursor-dot,
+      .cursor-trail {
+        display: none;
+      }
+    }
+    

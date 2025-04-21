@@ -1,0 +1,388 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    cursor: none;
+}
+
+.magnetic-link {
+    position: relative;
+    display: inline-block;
+    padding: 14px 28px;
+    font-weight: 600;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    color: black; /* dark text */
+     /* light background */
+    backdrop-filter: blur(10px); /* blur effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .magnetic-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+     /* slightly stronger white on hover */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .magnetic-link:hover::before {
+    transform: scale(1.2);
+    opacity: 1;
+    background:#613498;
+  }
+ 
+  .magnetic-link span {
+    position: relative;
+    z-index: 2;
+    color: black; /* make sure text stays dark */
+  }
+  
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #111; /* or your custom dark background */
+    color: #fff;
+  }
+  
+  
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+  }
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background: url(standard\ \(2\).gif);
+}
+
+.back-button-container {
+    display: flex;
+    /* Use flex for alignment */
+}
+
+/* Back button styling */
+.back-button {
+    display: inline-block;
+    background-color: rgba(22, 19, 26, 0.7);
+    /* Background color */
+    border: 2px solid #532196;
+    /* Border color */
+    border-radius: 32px;
+    /* Rounded corners */
+    padding: 3vh 2vw;
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+    color: rgb(230, 224, 224);
+    /* Text color */
+    font-size: 20px;
+    /* Font size */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
+    /* animation: bounce 1s infinite; Animation */
+    position: relative;
+    top: 82vh;
+    left: 82vw;
+    font-family: fonts;
+}
+
+.back-button-container {
+    margin-right: 140px;
+    /* Push the back button to the left */
+}
+
+/* Back button hover effect */
+.back-button:hover {
+    background-color: #613498;
+    /* Light purple on hover */
+}
+
+
+/* Bounce animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        /* Original position */
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* Move up */
+    }
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+}
+
+.video-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(EdsMarketRegularSlant.ttf);
+}
+
+@font-face {
+    font-family: fonts;
+    src: url(Hacked-KerX.ttf);
+}
+
+@font-face {
+    font-family: fonts1;
+    src: url(PastiOblique-7B0wK.otf);
+}
+
+@font-face {
+    font-family: fonts2;
+    src: url(FunkyCoffee-E4XYg.otf);
+}
+
+
+.content {
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+
+.name {
+    position: absolute;
+    color: #ffffff;
+    top: 5vh;
+    left: 8vw;
+    font-size: 40px;
+    font-family: myfont;
+}
+
+
+
+
+
+
+.text {
+    position: absolute;
+    color: #ffffff;
+    top: 27vh;
+    left: 10vw;
+    font-family: fonts2;
+    font-size: 22px;
+}
+
+.text h1 {
+    padding: 3px;
+    color: #6f1ee0;
+    display: inline-block;
+}
+
+
+
+@keyframes blurEffect {
+
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blurEffect2 {
+
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 4%;
+    left: 45%;
+    width: 50%;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    font-family: fonts;
+    background:black;
+    border-radius: 17px;
+    border-color: white;
+    stroke: #fff;
+    border-bottom: 2px solid #ffffff33;
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    z-index:1;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(90deg, rgba(111,30,224,1) 11%, rgba(155,124,181,1) 94%);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+.icon-button i {
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+
+
+.social-icons {
+    position: absolute;
+    top: 58vh;
+    left: 9vw;
+    display: flex;
+    gap: 45px;
+    z-index: 5;
+}
+
+.icon-button {
+    font-size: 47px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+    mix-blend-mode: exclusion;
+    text-decoration: none;
+    border: 1px solid white;
+}
+
+.icon-button:hover {
+    transform: scale(1.2);
+    background: black;
+    color: white;
+    mix-blend-mode: difference;
+}
+
+.photo {
+    position: absolute;
+    top: 22vh;
+    right: 15vw;
+    width: 300px;
+    max-width: 80vw;
+    padding: 12px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(111, 30, 224, 0.3), 0 4px 10px rgba(255, 255, 255, 0.1) inset;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .photo img {
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+  }
+  
+  .photo:hover {
+    transform: scale(1.05) rotate(1.5deg);
+    box-shadow: 0 15px 45px rgba(111, 30, 224, 0.5);
+  }
+  
+  .photo:hover img {
+    transform: scale(1.03);
+  }
+  

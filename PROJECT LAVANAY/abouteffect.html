@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanay's Home Page</title>
+    <link rel="stylesheet" href="abouteffect.css">
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>  
+    <div class="img">
+        <img src="gif2.gif" alt="">
+    </div>
+    <script>
+      
+        const timeout = setTimeout(function() {
+            window.location.href = 'about.html'; // Navigate to homenipun.html
+        }, 3500); // 8000ms = 8 seconds
+
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                clearTimeout(timeout); // Cancel the automatic redirection
+                window.location.href = 'about.html'; // Navigate immediately
+            }
+        });
+        // ===== 🎯 Cursor Dot and Trail Setup =====
+const dot = document.querySelector('.cursor-dot');
+const trail = document.querySelector('.cursor-trail');
+
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+
+// Move black dot instantly with mouse
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  dot.style.left = `${mouseX}px`;
+  dot.style.top = `${mouseY}px`;
+});
+
+// Animate the trailing white circle
+
+function animateTrail() {
+const dx = mouseX - trailX;
+const dy = mouseY - trailY;
+
+trailX += dx * 0.175;
+trailY += dy * 0.175;
+
+const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 120, 0.8);
+
+trail.style.left = `${trailX}px`;
+trail.style.top = `${trailY}px`;
+trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.3})`;
+
+requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+// ===== 🎨 Trail Hover Color Change on Icons =====
+
+ const hoverTargets = document.querySelectorAll('.icon-button i,.hover-target');
+ hoverTargets.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    trail.style.background = '#6f1ee0'; // Purple highlight
+  });
+  el.addEventListener('mouseleave', () => {
+    trail.style.background = 'white'; // Revert to original
+    
+  });
+});
+
+// ===== 🧲 Magnetic Hover Effect =====
+const magneticLinks = document.querySelectorAll('.magnetic-link');
+magneticLinks.forEach(link => {
+  link.addEventListener('mousemove', (e) => {
+    const rect = link.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    link.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px) scale(1.05)`;
+  });
+  link.addEventListener('mouseleave', () => {
+    link.style.transform = `translate(0, 0) scale(1)`;
+  });
+});
+
+// ===== ⛔ Hide Trail on Any Anchor Hover =====
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    trail.style.opacity = '0';
+  });
+  link.addEventListener('mouseleave', () => {
+    trail.style.opacity = '1';
+  });
+});
+
+    </script>
+</body>
+</html>

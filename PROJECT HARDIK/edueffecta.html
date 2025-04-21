@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardik's Education</title>
+    <link rel="stylesheet" href="edueffecta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <section>
+            <video src="smoke.mp4" autoplay muted></video>
+            <h1>
+                <span>E</span>
+                <span>D</span>
+                <span>U</span>
+                <span>C</span>
+                <span>A</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+            </h1>
+        </section>
+    </div>
+    <script>
+        const timeout = setTimeout(function() {
+            window.location.href = 'edua.html'; 
+        }, 8000); // 8000ms = 8 seconds
+
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                clearTimeout(timeout); 
+                window.location.href = 'edua.html'; 
+            }
+        });
+    </script>
+</body>
+</html>

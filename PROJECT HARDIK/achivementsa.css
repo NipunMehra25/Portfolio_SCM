@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    color: white;
+  }
+  
+  .bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .bg-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .name {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    font-size: calc(1.8vh + 1.5vw);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 20px;                  /* Space between links */
+    padding: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;                /* Align to right side */
+    z-index: 10;
+  }
+  
+  
+  .navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: calc(1vh + 1vw);
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #08d676;
+  }
+  
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #08d676;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover::after {
+    width: 100%;
+  }
+  
+  
+  .header {
+    display: flex;
+    justify-content: space-between; /* logo left, navbar right */
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .logo a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    text-decoration: none;
+  }
+  
+  .navbar{
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(1vh + 1vw);
+    color: #ffffff;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(to right, #08d676, #08d676);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover {
+    color: #08d676;
+}
+
+.scene {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  perspective: 1200px;
+  z-index: 2;
+}
+
+
+.pyramid-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+  width: 200px;
+  height: 200px;
+  z-index: 3;
+  opacity: 0;
+  animation: appear 1s ease-in-out 6s forwards;
+}
+
+@keyframes appear {
+  0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.pyramid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotateX(0) rotateY(0);
+  }
+  100% {
+      transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.pyramid-face {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0.8;
+}
+
+
+/* Front face - triangle */
+.pyramid-face.front {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173.2px solid #08d676; /* Height of the triangle */
+  transform: translateZ(57.7px) rotateX(30deg);
+}
+
+
+.pyramid-face.right {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173.2px solid #08d676;
+  transform: rotateY(90deg) translateZ(57.7px) rotateX(30deg);
+} 
+
+/* Back face - triangle */
+.pyramid-face.back {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173.2px solid #08d676;
+  transform: rotateY(180deg) translateZ(57.7px) rotateX(30deg);
+} 
+
+/* Left face - triangle */
+.pyramid-face.left {
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 173.2px solid #08d676;
+  transform: rotateY(270deg) translateZ(57.7px) rotateX(30deg);
+} 
+
+/* Bottom face - square */
+.pyramid-face.bottom {
+  width: 200px;
+  height: 200px;
+  background-color: #08d676;
+  transform: rotateX(90deg) translateZ(-100px);
+}

@@ -1,0 +1,92 @@
+*{
+    padding:0%;
+    margin: 0%;
+    cursor: url("starter-northern-lights-cursor.png"), auto;
+    font-family: "Bebas Neue", sans-serif;
+
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+section:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#e81c1c,rgb(137, 61, 38));
+    mix-blend-mode: color;
+    pointer-events: none;
+}
+
+h1{
+    position: absolute;
+    top: 40%;
+    left: 42%;
+    text-align: center;
+    justify-content: center;
+    font-size: 100px;
+    color:#e81c1c;
+    
+}
+
+h1 span{
+    opacity: 0;
+    display: inline-block;
+    animation:animate 1s linear forwards;
+}
+
+section video{
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes animate {
+    0%{
+        opacity: 0%;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+    }
+    100%{
+        opacity: 100%;
+        transform: rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+h1 span:nth-child(1)
+{
+    animation-delay: 2s;
+}
+h1 span:nth-child(2)
+{
+    animation-delay: 2.5s;
+}h1 span:nth-child(3)
+{
+    animation-delay: 3s;
+}h1 span:nth-child(4)
+{
+    animation-delay: 3.5s;
+}
+
+@keyframes fadeout{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.content{
+    animation: fadeout 1s linear 7s forwards;
+}

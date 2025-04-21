@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hardik's Achievements</title>
+  <link rel="stylesheet" href="achivementeffecta.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="content">
+    
+    <!-- Navigation bar
+    <div class="nav">
+      <a href="homeeffecta.html">Home</a>
+      <a href="abouteffecthardik.html">About</a>
+      <a href="achivementeffecta.html" style="color: #08d676;">Achievements</a>
+      <a href="edua.html">Education</a>
+    </div> -->
+
+    <!-- Section with smoke video and heading -->
+    <section>
+      <video src="smoke.mp4" autoplay muted loop playsinline></video>
+      <h1>
+        <span>A</span>
+        <span>C</span>
+        <span>H</span>
+        <span>I</span>
+        <span>E</span>
+        <span>V</span>
+        <span>E</span>
+        <span>M</span>
+        <span>E</span>
+        <span>N</span>
+        <span>T</span>
+        <span>S</span>
+      </h1>
+    </section>
+  </div>
+
+  <script>
+    const timeout = setTimeout(() => {
+      window.location.href = 'Achivementsa.html';
+    }, 8000);
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => clearTimeout(timeout));
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        clearTimeout(timeout);
+        window.location.href = 'Achivementsa.html';
+      }
+    });
+  </script>
+</body>
+</html>

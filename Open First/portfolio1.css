@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Fjalla One', sans-serif;
+  }
+  
+  body {
+    background: url('standard (2).gif') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Wrapper centers everything vertically */
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; /* Padding for top and bottom */
+  }
+  
+  /* Container for cards */
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  /* Card styles */
+  .back {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    background-color: #1c1c1c;
+    border: 2px solid #5c4b8a;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(184, 182, 182, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #5e2b91, #a55eb5);
+  }
+  
+  /* Glow effect */
+  .glow::before, .glow::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(128, 0, 128, 0.05));
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(10px);
+  }
+  
+  /* Text styling */
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    color: #eeeeee;
+    margin-bottom: 8px;
+  }
+  
+  .school-name {
+    font-weight: normal;
+    color: #84828e;
+    font-size: 20px;
+  }
+  
+  .designation {
+    font-size: 14px;
+    font-style: italic;
+    color: #cccccc;
+  }
+  
+  /* Buttons */
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .link {
+    background-color: #5c4b8a;
+    color: white;
+    width: 120px;
+    font-size: 16px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    background-color: #4a3b6e;
+  }
+  
+  /* Responsive styles */
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .back {
+      width: 80%;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .school-name {
+      font-size: 18px;
+    }
+  
+    .link {
+      font-size: 15px;
+      width: 100px;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .back {
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    .school-name {
+      font-size: 16px;
+    }
+  
+    .link {
+      width: 100%;
+      font-size: 14px;
+    }
+  }
+  
+
+/* Add this to your CSS file */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.card-link .link {
+  cursor: pointer;
+}

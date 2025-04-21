@@ -1,0 +1,246 @@
+*{
+    padding:0%;
+    margin: 0%;
+    font-family: "Bebas Neue", sans-serif;
+    cursor: url("starter-northern-lights-cursor.png"),auto;
+}
+
+* a{
+    cursor: url("starter-northern-lights-pointer.png"),auto;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+}
+
+.content{
+    animation: blurEffect 2s linear;
+}
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(1vh + 1vw);
+    color: #ffffff;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(to right, #e81c1c, #e81c1c);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover {
+    color: #e87e61;
+}
+
+.name{
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size: calc(2vh + 1.5vw);
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.project1 {
+    justify-content: center;
+    position: absolute;
+    background: linear-gradient(#e81c1c, #e87e61);
+    top: 25%; 
+    left: 30%; 
+    transform: translateX(-50%);
+    height: 60vh;
+    width: 30vw;
+    border-radius: 30px;  
+    box-shadow: 0 0 15px 8px rgba(137, 61, 38,0.5); 
+    z-index: 10;
+    color: transparent;
+    transition: color 1s ease; 
+}
+
+.project1:hover {
+    color: black; 
+}
+
+
+.project1 h2 {
+    font-family: "Bebas Neue", sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    left: 34%;
+    top: 2%;
+    color: #000;
+
+}
+
+.project1 h5 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 6%;
+    top: 12%;
+    color: #000;
+
+}
+
+.project1 ul {
+    position: absolute;
+    top: 20%;
+    font-family: "Bebas Neue", sans-serif;
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+.project1 ul li {
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 10px; 
+    font-size: calc(.8vh + .7vw);
+}
+
+
+
+/* Divider Line */
+
+.project2 {
+    justify-content: center;
+    position: absolute;
+    background: linear-gradient(#e81c1c,#e87e61);
+    top: 25%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    height: 60vh;
+    width: 30vw;
+    border-radius: 30px;  
+    box-shadow: 0 0 15px 8px rgba(137, 61, 38,0.5); 
+    z-index: 10;
+    color: transparent;
+    transition: color 1s ease; 
+}
+
+.project2:hover {
+    color: #000;
+}
+
+.project2 h2 {
+    font-family: "Bebas Neue", sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    left: 34%;
+    top: 2%;
+    color: #000;
+}
+
+.project2 h5 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 16%;
+    top: 12%;
+    color: #000;
+
+}
+
+.project2 ul {
+    position: absolute;
+    top: 20%;
+    font-family: "Bebas Neue", sans-serif;
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+.project2 ul li {
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 10px; 
+    font-size: calc(.8vh + .7vw);
+}
+
+
+
+/* Divider Line */
+.project2 .divider {
+    width: 100%;
+    height: 2px;  
+    background-color: rgb(0, 0, 0);  
+    position: absolute;
+    top: 20%;  
+}
+

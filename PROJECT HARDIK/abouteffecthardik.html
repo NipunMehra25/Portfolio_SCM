@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hardik's about</title>
+  <link rel="stylesheet" href="abouteffecthardik.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: "Bebas Neue", sans-serif;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    .content {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeout 1s linear 7s forwards;
+    }
+
+    section {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(#08d676, rgb(137, 61, 38));
+      mix-blend-mode: color;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    section video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      font-size: 80px;
+      color: #08d676;
+      gap: 10px;
+    }
+
+    h1 span {
+      opacity: 0;
+      animation: animate 1s linear forwards;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+        filter: blur(0px);
+      }
+    }
+
+    /* Delays for each letter */
+    h1 span:nth-child(1) { animation-delay: 1.2s; }
+    h1 span:nth-child(2) { animation-delay: 1.4s; }
+    h1 span:nth-child(3) { animation-delay: 1.6s; }
+    h1 span:nth-child(4) { animation-delay: 1.8s; }
+    h1 span:nth-child(5) { animation-delay: 2s; }
+
+    @keyframes fadeout {
+      0%, 50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <section>
+      <video src="smoke.mp4" autoplay muted></video>
+      <h1>
+        <span>A</span>
+        <span>B</span>
+        <span>O</span>
+        <span>U</span>
+        <span>T</span>
+      </h1>
+    </section>
+  </div>
+
+  <script>
+    const timeout = setTimeout(function() {
+      window.location.href = 'abouthardik.html';
+    }, 8000);
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        clearTimeout(timeout);
+        window.location.href = 'abouthardik.html';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanay's Achievements</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://use.typekit.net/qel1jrr.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>  
+        <div class="back-button-container">
+            <a href="/FEE%20Project/frontpage/portfolio2.html" class="back-button">
+                <i class="ri-user-fill"> </i>Portfolios
+            </a>
+        </div>
+        <div class="name">
+            <p>Lavanay&nbsp;'s&nbsp;Portfolio</p>
+        </div>
+
+        <div class="navbar hover-target">
+            <a href="homeeffect.html" class="magnetic-link">Home</a>
+            <a href="projecteffect.html"class="magnetic-link">Project</a>
+            <a href="" style="color: #6f1ee0;" class="magnetic-link">About</a>
+            <a href="achivementeffect.html"class="magnetic-link">Achievements</a>
+            <a href="edueffect.html"class="magnetic-link">Education</a>
+        </div>
+      
+        <!-- 💬 About Me Section -->
+<!-- 💬 About Me Section -->
+<div class="about-container">
+  <div class="about-box">
+    <h2 class="about-title">About Me</h2>
+    <p class="about-text">
+      Hello! I’m Lavanay, a passionate front-end developer and creative designer. 
+      I love turning ideas into interactive, responsive, and beautiful digital experiences.
+      Whether it's coding smooth animations or crafting bold UI designs, I enjoy blending tech with creativity.
+    </p>
+  </div>
+</div>
+
+
+
+        <div class="skills-section icon-box magnetic-link-skill">
+          <h2 class="skills-title" style="color: white;">MY SKILLS</h2>
+          <div class="skills-options">
+              <div class="skill-button" id="frontend-btn">FRONT END</div>
+              <div class="skill-button" id="design-btn">DESIGN</div>
+              <div class="skill-button" id="devskills-btn">DEV SKILLS</div>
+              <div class="skill-button" id="core-btn">CORE LANGUAGES</div> 
+          </div>
+      
+          <!-- FRONT END Skills -->
+          <div class="skills-display" id="frontend-skills">
+              <img src="Untitled design.png" alt="HTML">
+              <img src="Untitled design (1).png" alt="CSS">
+              <img src="javascript-logo.png" alt="JavaScript">
+          </div>
+      
+          <!-- DESIGN Skills -->
+          <div class="skills-display" id="design-skills">
+              <img src="figma.png" alt="Figma">
+              <img src="ae.png" alt="Illustrator">
+          </div>
+      
+          <!-- DEV SKILLS -->
+          <div class="skills-display" id="devskills-skills">
+              <img src="git.png" alt="Git">
+              <img src="github.png" alt="GitHub">
+          </div>
+      
+          <!-- CORE LANGUAGES Skills (Added Section) -->
+          <div class="skills-display" id="core-skills">
+            <img src="c.png" alt="C" />
+
+              <img src="python-png.png" alt="Python" />
+          </div>
+      </div>
+      
+      
+    <script>
+      // ===== 🎥 Video Hover Play =====
+const video = document.getElementById('hoverVideo');
+if (video) {
+  video.addEventListener('mouseenter', () => {
+    video.currentTime = 0;
+    video.play();
+  });
+}
+
+// ===== 🎯 Cursor Dot and Trail Setup =====
+const dot = document.querySelector('.cursor-dot');
+const trail = document.querySelector('.cursor-trail');
+
+let mouseX = 0, mouseY = 0;
+let trailX = 0, trailY = 0;
+
+// Move black dot instantly with mouse
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  dot.style.left = `${mouseX}px`;
+  dot.style.top = `${mouseY}px`;
+});
+
+// Animate the trailing white circle
+function animateTrail() {
+  const dx = mouseX - trailX;
+  const dy = mouseY - trailY;
+
+  trailX += dx * 0.175;
+  trailY += dy * 0.175;
+
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+  const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 120, 0.8);
+
+  trail.style.left = `${trailX}px`;
+  trail.style.top = `${trailY}px`;
+  trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.3})`;
+
+  requestAnimationFrame(animateTrail);
+}
+animateTrail();
+
+// ===== 🎨 Trail Hover Color Change on Icons =====
+const hoverTargets = document.querySelectorAll('.icon-button i,.hover-target');
+hoverTargets.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    trail.style.background = '#6f1ee0'; // Purple highlight
+  });
+  el.addEventListener('mouseleave', () => {
+    trail.style.background = 'white'; // Revert to original
+    
+  });
+});
+
+// ===== 🧲 Magnetic Hover Effect =====
+const magneticLinks = document.querySelectorAll('.magnetic-link');
+magneticLinks.forEach(link => {
+  link.addEventListener('mousemove', (e) => {
+    const rect = link.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    link.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px) scale(1.05)`;
+  });
+  link.addEventListener('mouseleave', () => {
+    link.style.transform = `translate(0, 0) scale(1)`;
+  });
+});
+const magneticLinksSkills = document.querySelectorAll('.magnetic-link-skill');
+
+magneticLinksSkills.forEach(link => {
+  link.addEventListener('mousemove', (e) => {
+    const rect = link.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    // Apply the magnetic effect to skill section links
+    link.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+  });
+
+  link.addEventListener('mouseleave', () => {
+    link.style.transform = `translate(0, 0) scale(1)`;
+  });
+});
+
+// ===== ⛔ Hide Trail on Any Anchor Hover =====
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    trail.style.opacity = '0';
+  });
+  link.addEventListener('mouseleave', () => {
+    trail.style.opacity = '1';
+  });
+});
+
+const frontendBtn = document.getElementById('frontend-btn');
+const designBtn = document.getElementById('design-btn');
+const devskillsBtn = document.getElementById('devskills-btn');
+const coreBtn = document.getElementById('core-btn');
+
+const frontendSkills = document.getElementById('frontend-skills');
+const designSkills = document.getElementById('design-skills');
+const devskillsSkills = document.getElementById('devskills-skills');
+const coreSkills = document.getElementById('core-skills');
+
+// Function to hide all sections
+function hideAll() {
+  frontendSkills.style.display = 'none';
+  designSkills.style.display = 'none';
+  devskillsSkills.style.display = 'none';
+  coreSkills.style.display = 'none';
+}
+
+// Show Frontend Skills
+frontendBtn.addEventListener('click', () => {
+  hideAll();
+  frontendSkills.style.display = 'flex';
+});
+
+// Show Design Skills
+designBtn.addEventListener('click', () => {
+  hideAll();
+  designSkills.style.display = 'flex';
+});
+
+// Show Developer Skills
+devskillsBtn.addEventListener('click', () => {
+  hideAll();
+  devskillsSkills.style.display = 'flex';
+});
+
+// Show Core Languages
+coreBtn.addEventListener('click', () => {
+  hideAll();
+  coreSkills.style.display = 'flex';
+});
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,405 @@
+*{
+    padding:0%;
+    margin: 0%;
+    font-family: myfont;
+    cursor: url("starter-northern-lights-cursor.png"),auto;
+}
+
+* a{
+    cursor: url("starter-northern-lights-pointer.png"),auto;
+}
+
+#model{
+    animation: b2 4s linear;
+    position: absolute;
+    top: 0;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+}
+
+.content{
+    animation: blurEffect 3s linear;
+}
+
+.video-background {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@font-face{
+    font-family: myfont;
+    src: url(Warpen.otf);
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes b2 {
+    
+    0%{
+        opacity: 0%;
+    }
+    20%{
+        opacity: 15%;
+    }
+    40%{
+        opacity:25%;
+    }
+    50%{
+        opacity: 30%;
+    }
+    70%{
+        opacity: 60%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(.8vh + .6vw);
+    color: #ffffff;
+    animation: blureffect2 2s linear;
+}
+
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(to right, #00b3ff, #00b3ff);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover {
+    color: #00b3ff;
+}
+
+.name {
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size: calc(2vh + 1.5vw);
+    font-family: myfont;
+}
+
+.project1 {
+    justify-content: center;
+    position: absolute;
+    background: linear-gradient(#00b3ff, #00fff7);
+    top: 25%; 
+    left: 30%; 
+    transform: translateX(-50%);
+    height: 60vh;
+    width: 30vw;
+    border-radius: 30px;  
+    box-shadow: 0 0 15px 8px rgba(0, 251, 255, 0.5); 
+    z-index: 10;
+    color: transparent;
+    transition: color 1s ease; 
+}
+
+.project1:hover {
+    color: black; 
+}
+
+
+.project1 h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    left: 34%;
+    top: 2%;
+    color: #000;
+
+}
+
+.project1 h5 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 6%;
+    top: 12%;
+    color: #000;
+
+}
+
+.project1 ul {
+    position: absolute;
+    top: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+.project1 ul li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px; 
+    font-size: calc(.8vh + .7vw);
+}
+
+
+
+/* Divider Line */
+.project1 .divider {
+    width: 100%;
+    height: 2px;  
+    background-color: rgb(0, 0, 0);  
+    position: absolute;
+    top: 20%;  
+}
+
+.project2 {
+    justify-content: center;
+    position: absolute;
+    background: linear-gradient(#00b3ff,#00fff7);
+    top: 25%; 
+    left: 70%; 
+    transform: translateX(-50%); 
+    height: 60vh;
+    width: 30vw;
+    border-radius: 30px;  
+    box-shadow: 0 0 15px 8px rgba(0, 251, 255, 0.5); 
+    z-index: 10;
+    color: transparent;
+    transition: color 1s ease; 
+}
+
+.project2:hover {
+    color: #000;
+}
+
+.project2 h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    font-size: xx-large;
+    left: 34%;
+    top: 2%;
+    color: #000;
+}
+
+.project2 h5 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    position: absolute;
+    left: 16%;
+    top: 12%;
+    color: #000;
+
+}
+
+.project2 ul {
+    position: absolute;
+    top: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style-type: disc; 
+    margin-left: 20px; 
+}
+
+.project2 ul li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 10px; 
+    font-size: calc(.8vh + .7vw);
+
+}
+
+
+
+/* Divider Line */
+.project2 .divider {
+    width: 100%;
+    height: 2px;  
+    background-color: rgb(0, 0, 0);  
+    position: absolute;
+    top: 20%;  
+}
+
+#button1 {
+    position: absolute;
+    top: 30vh;
+    left: 7vw;
+  }
+  
+#button2 {
+    position: absolute;
+    top: 29vh;
+    left: 65vw;
+}
+  
+/* From Uiverse.io by marcelodolza */ 
+.button {
+    width: 25vw;
+    top: 35vh;
+    left: 7vw;
+  --white: #ffe7ff;
+  --bg: #080808;
+  --radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  position: absolute;
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  transition: all 0.2s ease;
+  box-shadow:
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+.button .wrap {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 32px 45px;
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.button .wrap p span:nth-child(2) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+.button .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  transition: all 0.2s ease;
+  transform: translateY(2%);
+  mask-image: linear-gradient(to bottom, white 40%, transparent);
+}
+.button .wrap::before,
+.button .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.button .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.button .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 12%;
+  bottom: 40%;
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.button:hover {
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+.button:hover .wrap::before {
+  transform: translateY(-5%);
+}
+.button:hover .wrap::after {
+  opacity: 0.4;
+  transform: translateY(5%);
+}
+.button:hover .wrap p {
+  transform: translateY(-4%);
+}
+.button:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}

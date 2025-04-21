@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    cursor: default;
+  }
+  
+  .content {
+    animation: fadeout 1s linear 7s forwards;
+    position: relative;
+    z-index: 2;
+  }
+  
+  section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  section video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  section::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#08d676, rgb(137, 61, 38));
+    mix-blend-mode: color;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    color: #08d676;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
+  
+  h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: animate 1s linear forwards;
+  }
+  
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+      filter: blur(0);
+    }
+  }
+  
+  /* Stagger animation delays */
+  h1 span:nth-child(1) { animation-delay: 1.2s; }
+  h1 span:nth-child(2) { animation-delay: 1.4s; }
+  h1 span:nth-child(3) { animation-delay: 1.6s; }
+  h1 span:nth-child(4) { animation-delay: 1.8s; }
+  h1 span:nth-child(5) { animation-delay: 2s; }
+  h1 span:nth-child(6) { animation-delay: 2.2s; }
+  h1 span:nth-child(7) { animation-delay: 2.4s; }
+  h1 span:nth-child(8) { animation-delay: 2.6s; }
+  h1 span:nth-child(9) { animation-delay: 2.8s; }
+  h1 span:nth-child(10) { animation-delay: 3s; }
+  h1 span:nth-child(11) { animation-delay: 3.2s; }
+  h1 span:nth-child(12) { animation-delay: 3.4s; }
+  
+  @keyframes fadeout {
+    0%, 50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Nav bar styling */
+  .nav {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 6px 12px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .nav a:hover {
+    color: #08d676;
+  }
+  
