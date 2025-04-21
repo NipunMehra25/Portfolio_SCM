@@ -5,8 +5,8 @@
      cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; 
 }
 
-* a{
-    /* cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; */
+a{
+    cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; 
 }
 
 html,body{
