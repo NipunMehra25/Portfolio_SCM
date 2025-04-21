@@ -91,7 +91,7 @@ body {
     color: #ffffff;
     top: 6vh;
     left: 8vw;
-    font-size: calc(2vh + 1.5vw);
+    font-size: calc(1vh + 1vw);
 }
 
 /* 3D cube scene container */
