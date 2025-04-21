@@ -1,0 +1,296 @@
+*{
+    padding:0%;
+    margin: 0%;
+    font-family: myfont;
+    cursor: url("starter-northern-lights-cursor.png"),auto;
+}
+
+* a{
+    cursor: url("starter-northern-lights-pointer.png"),auto;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    opacity: 1;
+    display: flex;
+}
+
+.video-background {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@font-face{
+    font-family: myfont;
+    src: url(Warpen.otf);
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+/* Back button styling */
+.back-button {
+    z-index: 99;
+    display: inline-block;
+    background-color: rgba(22, 19, 26, 0.7);
+    /* Background color */
+    border: 2px solid #00b3ff;
+    /* Border color */
+    border-radius: 32px;
+    /* Rounded corners */
+    padding: 3vh 2vw;
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+    color: rgb(230, 224, 224);
+    /* Text color */
+    font-size: 20px;
+    /* Font size */
+    transition: background-color 0.3s ease;
+    /* Smooth background transition */
+    /* animation: bounce 1s infinite; Animation */
+    position: relative;
+    top: 88vh;
+    left: 84vw;
+    font-family: fonts;
+}
+
+.back-button-container {
+    z-index: 99;
+    margin-right: 140px;
+    /* Push the back button to the left */
+}
+
+/* Back button hover effect */
+.back-button:hover {
+    background-color: #00b3ff;
+    /* Light purple on hover */
+}
+
+.name{
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size:calc(2vh + 1.5vw);
+    font-family: myfont;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.navbar a {
+    position: relative; 
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(.8vh + .6vw);
+    color: #ffffff;
+    animation: blureffect2 2s linear;
+}
+
+.photo {
+    position: absolute; 
+    top: 17vh; 
+    left: 59vw; 
+    height: 70vh;
+    width: 35vw;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.5s ease;}
+
+.photo video{
+    height: 100%;
+    width: 100%;
+}
+
+.photo:hover{
+    transform: scale(1.2);
+}
+
+.text{
+    position: absolute;
+    color: #ffffff;
+    top: 30vh;
+    left: 10vw;
+}
+
+.text p {
+    font-size:calc(1vh + 1vw);
+} 
+
+.h1{
+    padding: .5vh;
+    color:#00b3ff;
+}
+
+.social-media{
+    position: absolute;
+    left: 10vw;
+    top: 60vh;
+    height: 10vh;
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+}
+
+.social-media a {
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    padding: .5vw; 
+    margin: .5vh;
+    text-decoration: none;
+    border: .3vh solid #00b3ff;
+    border-radius: 50%;
+    font-size: calc(2.3vh + 2.2vw);
+    color: #00b3ff;
+    transition: transform 0.5s ease;
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+    
+}
+
+.social-media i{
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+    cursor: url("starter-northern-lights-pointer.png"), auto; 
+}
+
+
+
+.mail{
+    position: absolute;
+    left: 11vw;
+    top: 73vh; 
+    border: solid;
+    border-color: #00b3ff;
+    border-radius: 100px;
+    background-color: #00b3ff;
+    box-shadow:  0 0 20px #00b3ff;
+    transition: transform 0.5s ease;
+
+}
+
+.mail a{
+    padding: .6vh;
+    font-size: calc(2.5vh + 2.5vw);
+    text-decoration: none;
+    color: black;
+}
+
+.mail:hover{
+    transform: scale(1.2);
+}
+
+#feedback{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 99;
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #00b3ff;
+    border-radius: 32px;
+    color: rgb(230, 224, 224);
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    top: 88vh;
+    left: 72vw;
+    font-family: fonts;
+    height: 9vh;
+    width: 11vw;
+}
+
+.feedback-in{
+    padding: 3vh 1.2vw;
+    text-decoration: none;
+    font-family: fonts;
+    color: rgb(230, 224, 224);
+    font-size: 20px;
+    display: inline-block;
+}
+
+#feedback:hover{
+    background-color: #00b3ff;
+}
+
+@keyframes blurEffect {
+    
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes blurEffect2 {
+    
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: .5vh;
+    display: block;
+    margin-top: .8vh;
+    right: 0;
+    background: linear-gradient(to right, #00b3ff, #00b3ff);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+.navbar a:hover {
+    color: #00b3ff;
+}
+
+#sp1{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: -200px;
+}

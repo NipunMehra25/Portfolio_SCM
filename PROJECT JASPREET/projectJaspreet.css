@@ -1,0 +1,1064 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: myfont;
+}
+
+/* Hide cursor only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
+}
+
+/* Magnetic button style */
+.magnetic-link {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Magnetic hover background effect */
+.magnetic-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 12px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover style for magnetic link */
+.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: #170581;
+}
+
+/* Override for navbar magnetic link */
+.navbar .nohover.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: white;
+}
+
+/* Inner span for magnetic link text */
+.magnetic-link span {
+  position: relative;
+  z-index: 2;
+  color: black;
+}
+
+/* Cursor dot style */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Cursor trail style */
+.cursor-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+}
+
+/* Navbar custom cursor behavior */
+.navbar a:hover ~ .cursor-trail {
+  width: 60px;
+  height: 60px;
+  background: #170581;
+  mix-blend-mode: normal;
+}
+
+
+#model {
+  animation: b2 4s linear;
+  position: absolute;
+  top: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+  opacity: 1;
+  display: flex;
+}
+
+.content {
+  animation: blurEffect 3s linear;
+}
+
+.video-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+@font-face {
+  font-family: myfont;
+  src: url(Warpen.otf);
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  animation: blurEffect 2s linear;
+}
+
+@keyframes blurEffect {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes b2 {
+  0% {
+    opacity: 0%;
+  }
+  20% {
+    opacity: 15%;
+  }
+  40% {
+    opacity: 25%;
+  }
+  50% {
+    opacity: 30%;
+  }
+  70% {
+    opacity: 60%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 2vh;
+  left: 45vw;
+  width: 50vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar a {
+  position: relative; 
+  text-decoration: none;
+  padding: 1.5vw;
+  font-size: calc(.8vh + .6vw);
+  color: #ffffff;
+  animation: blureffect2 2s linear;
+  z-index: 1;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+.name {
+  position: absolute;
+  color: #ffffff;
+  top: 6vh;
+  left: 8vw;
+  font-size: calc(1vh + 1vw);
+  font-family: myfont;
+}
+
+/* From Uiverse.io by marcelodolza */ 
+.button {
+  width: 25vw;
+  top: 35vh;
+  left: 7vw;
+  --white: #ffe7ff;
+  --bg: #080808;
+  --radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  position: absolute;
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  transition: all 0.2s ease;
+  box-shadow:
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+.button .wrap {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 32px 45px;
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.button .wrap p span:nth-child(2) {
+  display: none;
+}
+
+.button:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+
+.button:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+
+.button .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  transition: all 0.2s ease;
+  transform: translateY(2%);
+  mask-image: linear-gradient(to bottom, white 40%, transparent);
+}
+
+.button .wrap::before,
+.button .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.button .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.button .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 12%;
+  bottom: 40%;
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.button:hover {
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+.button:hover .wrap::before {
+  transform: translateY(-5%);
+}
+
+.button:hover .wrap::after {
+  opacity: 0.4;
+  transform: translateY(5%);
+}
+
+.button:hover .wrap p {
+  transform: translateY(-4%);
+}
+
+.button:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+/* Project Card Styling */
+.project-card {
+  background: rgba(0, 10, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(23, 5, 129, 0.3);
+  width: 20vw;
+  height: 30vh;
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px 5px rgba(23, 5, 129, 0.3),
+    inset 0 0 10px rgba(0, 255, 247, 0.1);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Title - First Line Styling */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #170581, #00fff7, #170581);
+  background-size: 200% 100%;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  animation: gradientMove 3s linear infinite;
+}
+
+/* Card content layout */
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1;
+}
+
+/* Card title styling */
+.project-card-title {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #00fff7;
+  margin-bottom: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+/* Card description styling */
+.project-card-description {
+  font-size: 1vw;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Hover effects */
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 
+    0 15px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px 8px rgba(23, 5, 129, 0.5),
+    inset 0 0 15px rgba(0, 255, 247, 0.2);
+}
+
+/* Add glow effect on hover */
+.project-card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(23, 5, 129, 0.1) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Animated gradient border */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Tech stack tags container */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  
+}
+
+/* Individual tech tag */
+.tech-tag {
+  background: rgba(23, 5, 129, 0.2);
+  color: #00fff7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7vw;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
+  transition: all 0.5s ease;
+  z-index: 15;
+  padding-bottom: 100px;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.back-button {
+  cursor: none;
+  position: absolute;
+  margin-top: 20px;
+  left: 120%;
+  transform: translateX(-50%);
+  bottom: -80px;
+  padding: 12px 30px;
+  font-size: 1vw;
+  background-color: rgba(0, 10, 20, 0.7);
+  color: #170581;
+  border: 1px solid #170581;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(23, 5, 129, 0.3);
+}
+
+.back-button:hover {
+  cursor: none;
+
+  background-color: rgba(23, 5, 129, 0.2);
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 6px 20px rgba(23, 5, 129, 0.5);
+}
+
+.back-button:active {
+  cursor: none;
+
+  transform: translateX(-50%) translateY(0);
+  box-shadow: 0 2px 10px rgba(23, 5, 129, 0.2);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar {
+    left: 0;
+    width: 100vw;
+    justify-content: space-around;
+  }
+  
+  .navbar a {
+    padding: 1vw;
+    font-size: calc(1vh + 1vw);
+  }
+  
+  .name {
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: calc(3vh + 2vw);
+  }
+  
+  .button {
+    width: 80vw;
+    top: 25vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .project-card {
+    width: 30vw;
+    height: auto;
+  }
+  
+  .project-card-title {
+    font-size: 5vw;
+  }
+  
+  .project-card-description {
+    font-size: 3.5vw;
+  }
+  
+  .tech-tag {
+    font-size: 2.5vw;
+    padding: 6px 12px;
+  }
+  
+  .back-button {
+    cursor: none;
+
+    font-size: 3vw;
+    padding: 15px 30px;
+  }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 10, 20, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 5, 129, 0.6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 247, 0.8);
+}
+
+/* Loading animation */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-top-color: #170581;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for blinking effect */
+@keyframes blureffect2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    /* Additional CSS fixes */
+    #button2 {
+      top: 35vh; /* Changed from 35vh (which is the same as button1) to 50vh */
+      left: 70vw;
+    }
+    
+    .back-button {
+      cursor: none;
+
+      position: absolute; /* Changed from absolute to relative */
+      display: inline-block; /* Ensure it's visible */
+      margin-top: 40px;
+      bottom: auto; /* Remove absolute positioning */
+    }
+    
+    .hidden-buttons {
+      display: none !important;
+    }
+    
+    /* Ensure card container has enough bottom padding for back button */
+    .card-container {
+      padding-bottom: 150px;
+    }
+    
+    /* Fix for back button visibility */
+    .card-container.show .back-button {
+        cursor: none;
+
+      opacity: 1;
+      pointer-events: all;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+
+    .disc {
+  
+      position: absolute;
+      bottom: 2vh;
+      right: 1vw;
+      font-size: calc(0.5vh + 0.4vw);
+      color: #170581;
+      background-color: rgba(0, 0, 0);
+      padding: 10px 20px;
+      border: 1px solid #170581;
+      border-radius: 10px;
+      max-width: 50vw;
+      z-index: 10;
+      line-height: 1.5;
+    }
+
+
+/* Project Card Styling */
+.project-card {
+  background: rgba(0, 10, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(23, 5, 129, 0.3);
+  width: 20vw;
+  height: 30vh;
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 15px 5px rgba(23, 5, 129, 0.3),
+    inset 0 0 10px rgba(0, 255, 247, 0.1);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Also update these class styles to ensure consistency */
+.project-card-title {
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: #00fff7;
+  margin-bottom: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.project-card-description {
+  font-size: 1vw;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.tech-tag {
+  background: rgba(23, 5, 129, 0.2);
+  color: #00fff7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7vw;
+  border: 1px solid rgba(0, 255, 247, 0.3);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.bg-video{
+  display:none ;
+}
+
+/* Media Queries for different screen sizes */
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: right 0.3s ease-in-out;
+    z-index: 99;
+    left: auto;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+
+  .navbar a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  
+  .mobile-menu-btn {
+    display: block;
+    z-index: 101;
+  }
+  
+  .name {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .button {
+    width: 85vw;
+    font-size: 18px;
+  }
+  
+  #button1 {
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  #button2 {
+    top: 54vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .project-card {
+    width: 32vw;
+    height: 32vh;
+  }
+  
+  .project-card-title {
+    font-size: 20px;
+  }
+  
+  .project-card-description {
+    font-size: 14px;
+  }
+  
+  .tech-tag {
+    font-size: 12px;
+  }
+  
+  .card-container {
+    width: 90vw;
+    top: 20vh;
+  }
+  
+  .back-button {
+    font-size: 14px;
+    padding: 10px 20px;
+    position: absolute;
+    top: -12vh;
+    left: 14vw;
+    transform: none;
+    margin: 40px auto 20px;
+    display: block;
+  }
+  
+  .disc {
+    display: none;
+    font-size: 12px;
+    bottom: 10px;
+    right: 10px;
+    max-width: 80vw;
+  }
+
+  .bg-video {
+    display: block;
+    position: absolute; 
+    top: -50px;
+    left: 0;
+    width: 100%; 
+    height: 110%; 
+    z-index: 0;
+    overflow: hidden;
+  }
+
+.bg-video video {
+    display: block;
+    position: absolute;
+    width: 100vw; 
+    height: 110vh; 
+    object-fit: cover; 
+    z-index: -1;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 200vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: right 0.3s ease-in-out;
+    z-index: 99;
+    left: auto;
+  }
+  
+  .navbar.active {
+    right: 0;
+  }
+
+  .navbar a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    z-index: 101;
+  }
+  
+  .name {
+    top: 20px;
+    left: 20px;
+    font-size: calc(2.5vh + 1.8vw);
+  }
+  
+  #button1 {
+    width: 40vw;
+    top: 25vh;
+    left: 30vw;
+  }
+  
+  #button2 {
+    width: 40vw;
+    top: 40vh;
+    left: 30vw;
+  }
+  
+  .project-card {
+    width: 40vw;
+    height: auto;
+    min-height: 220px;
+  }
+  
+  .project-card-title {
+    font-size: 18px;
+  }
+  
+  .project-card-description {
+    font-size: 14px;
+  }
+  
+  .tech-tag {
+    font-size: 12px;
+  }
+  
+  .card-container {
+    width: 90vw;
+    top: 15vh;
+  }
+}
+
+/* Large Devices (Laptops/Desktops) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .name {
+    font-size: calc(1.8vh + 1.2vw);
+  }
+  
+  .navbar {
+    left: 38vw;
+    width: 60vw;
+  }
+  
+  .navbar a {
+    padding: 1.2vw;
+    font-size: calc(0.7vh + 0.5vw);
+  }
+  
+  #button1 {
+    width: 28vw;
+    top: 30vh;
+    left: 10vw;
+  }
+  
+  #button2 {
+    width: 28vw;
+    top: 30vh;
+    left: 60vw;
+  }
+  
+  .project-card {
+    width: 25vw;
+  }
+}
+
+/* Mobile menu button styling */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #170581;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.mobile-menu-btn span:nth-child(1) {
+  top: 0px;
+}
+
+.mobile-menu-btn span:nth-child(2) {
+  top: 10px;
+}
+
+.mobile-menu-btn span:nth-child(3) {
+  top: 20px;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+  top: 10px;
+  transform: rotate(135deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-135deg);
+}
+
+/* Show mobile menu button only on smaller screens */
+@media screen and (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Hide cursor only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
+  
+  * a {
+    cursor: none;
+  }
+}
+
+
+/* Hide spline on mobile */
+@media (max-width: 768px) {
+  #model {
+      display: none;
+  }
+}

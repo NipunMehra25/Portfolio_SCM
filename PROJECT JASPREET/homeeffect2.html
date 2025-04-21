@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaspreet's Home Page 2</title>
+  <link rel="stylesheet" href="homeeffect2.css" />
+</head>
+<body>
+    <!-- Custom cursor elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
+  
+  <div class="content">
+    <section>
+      <video src="smoke.mp4" autoplay muted playsinline></video>
+      <div class="title">
+        <h1>
+          <span>H</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+        </h1>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const timeout = setTimeout(() => {
+      window.location.href = 'homeJaspreet2.html';
+    }, 8000);
+  
+    function skipAnimation() {
+      clearTimeout(timeout);
+      window.location.href = 'homenjaspreet2.html';
+    }
+  
+    // Skip on Enter key press
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        skipAnimation();
+      }
+    });
+  
+    // Skip on click or tap
+    document.addEventListener('click', skipAnimation);
+    document.addEventListener('touchstart', skipAnimation);
+
+
+    // Cursor tracking
+    const dot = document.querySelector('.cursor-dot');
+    const trail = document.querySelector('.cursor-trail');
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.left = `${mouseX}px`;
+      dot.style.top = `${mouseY}px`;
+      });
+
+      function animateTrail() {
+        const dx = mouseX - trailX;
+        const dy = mouseY - trailY;
+
+        trailX += dx * 0.7;
+        trailY += dy * 0.7;
+
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 30, 0.5);
+
+        trail.style.left = `${trailX}px`;
+        trail.style.top = `${trailY}px`;
+        trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.4})`;
+
+        requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+
+
+  </script>
+  
+</body>
+</html>

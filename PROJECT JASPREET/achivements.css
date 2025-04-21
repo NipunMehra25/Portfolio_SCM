@@ -1,0 +1,192 @@
+/* Importing custom font */
+@font-face {
+    font-family: 'myfont';
+    src: url('Warpen.otf');
+}
+
+/* Global reset and custom font + cursor */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'myfont', sans-serif;
+    cursor: url("starter-northern-lights-cursor.png"), auto;
+}
+
+/* Custom pointer cursor for links */
+* a {
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+}
+
+/* Body styles: Full screen layout with 3D perspective and black background */
+body {
+    height: 100vh;
+    display: flex;
+    perspective: 900px;
+    background-color: black;
+    overflow: hidden;
+}
+
+/* Positioning for the 3D model from Spline */
+#model {
+    position: absolute;
+}
+
+/* Main content container with blur animation on load */
+.content {
+    height: 100%;
+    width: 100%;
+    animation: blurEffect 2s linear;
+}
+
+/* Navigation bar styling and layout */
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 2vh;
+    left: 45vw;
+    width: 50vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav links style */
+.navbar a {
+    text-decoration: none;
+    padding: 1.5vw;
+    font-size: calc(.8vh + .6vw);
+    color: #ffffff;
+    animation: blureffect2 2s linear;
+    position: relative;
+}
+
+/* Underline animation on hover */
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 8px;
+    right: 0;
+    background: linear-gradient(to right, #00b3ff, #00b3ff);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Hover color change */
+.navbar a:hover {
+    color: #00b3ff;
+}
+
+/* Name section styling */
+.name {
+    position: absolute;
+    color: #ffffff;
+    top: 6vh;
+    left: 8vw;
+    font-size: calc(2vh + 1.5vw);
+}
+
+/* 3D cube scene container */
+.scene {
+    top: 30%;
+    left: 48%;
+    position: relative;
+    width: 8vw;
+    height: 30vh;
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+    transition: transform 1s ease;
+}
+
+/* Cube that holds the six faces */
+.cube {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+/* Description panel in bottom corner */
+.disc {
+    position: absolute;
+    bottom: 2vh;
+    right: 1vw;
+    font-size: calc(0.5vh + 0.4vw);
+    color: #00b3ff;
+    background-color: rgba(0, 0, 0);
+    padding: 10px 20px;
+    border: 1px solid #00b3ff;
+    border-radius: 10px;
+    max-width: 50vw;
+    z-index: 10;
+    line-height: 1.5;
+}
+
+/* Common face styles for all cube sides */
+.face {
+    cursor: pointer;
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: calc(1vh + 1vw);
+    font-weight: bold;
+    color: #333;
+    border-radius: 10px;
+    transition: transform 1s ease;
+    box-shadow: 0 0 20px #00b3ff;
+}
+
+/* Individual positioning for each cube face */
+.front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.right  { transform: rotateY(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+
+/* Expanded cube positions when user clicks */
+.scene.expanded .front  { transform: translateX(-42vw) translateY(0); }
+.scene.expanded .back   { transform: translateX(-27vw) translateY(0); }
+.scene.expanded .left   { transform: translateX(-12vw) translateY(0); }
+.scene.expanded .right  { transform: translateX(3vw) translateY(0); }
+.scene.expanded .top    { transform: translateX(18vw) translateY(0); }
+.scene.expanded .bottom { transform: translateX(33vw) translateY(0); }
+
+/* Highlight selected face */
+.scene.expanded .move {
+    transform: scale(1.3) translateY(25vh) translateX(-4vw);
+}
+
+/* Rotation animation for the cube */
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* Fade-in animation on load */
+@keyframes blurEffect {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
+}

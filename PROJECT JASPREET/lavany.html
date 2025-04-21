@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaspreet's Home Page 2</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: myfont;
+      cursor: none;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: black;
+      display: flex;
+    }
+
+    @font-face {
+      font-family: myfont;
+      src: url(Warpen.otf);
+    }
+
+    /* Cursor */
+    .cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #00b3ff;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-trail {
+      position: fixed;
+      width: 35px;
+      height: 35px;
+      background: white;
+      mix-blend-mode: difference;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: background 0.3s ease, opacity 0.3s ease;
+    }
+
+    .magnet {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      height: 100%;
+      width: 100%;
+      animation: blurEffect 2s linear;
+    }
+
+    .name {
+      position: absolute;
+      color: #ffffff;
+      top: 6vh;
+      left: 8vw;
+      font-size: calc(2vh + 1.5vw);
+    }
+
+    .navbar {
+      display: flex;
+      position: fixed;
+      top: 2vh;
+      left: 45vw;
+      width: 50vw;
+      height: 10vh;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .navbar a {
+      position: relative;
+      text-decoration: none;
+      padding: 1.5vw;
+      font-size: calc(.8vh + .6vw);
+      color: #ffffff;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: .5vh;
+      display: block;
+      margin-top: .8vh;
+      right: 0;
+      background: #00b3ff;
+      transition: width 0.3s ease-in-out;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    .navbar a:hover {
+      color: #00b3ff;
+    }
+
+    .photo {
+      position: absolute;
+      top: 17vh;
+      left: 59vw;
+      height: 70vh;
+      width: 35vw;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+
+    .photo video {
+      height: 100%;
+      width: 100%;
+    }
+
+    .photo:hover {
+      transform: scale(1.2);
+    }
+
+    .text {
+      position: absolute;
+      color: #ffffff;
+      top: 30vh;
+      left: 10vw;
+    }
+
+    .text p {
+      font-size: calc(1vh + 1vw);
+    }
+
+    .h1 {
+      padding: .5vh;
+      color: #00b3ff;
+    }
+
+    .social-media {
+      position: absolute;
+      left: 10vw;
+      top: 60vh;
+      height: 10vh;
+    }
+
+    .social-media a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: .5vw;
+      margin: .5vh;
+      text-decoration: none;
+      border: .3vh solid #00b3ff;
+      border-radius: 50%;
+      font-size: calc(2.3vh + 2.2vw);
+      color: #00b3ff;
+      transition: transform 0.5s ease;
+    }
+
+    .social-media a:hover {
+      transform: scale(1.2);
+    }
+
+    .mail {
+      position: absolute;
+      left: 11vw;
+      top: 73vh;
+      border: solid;
+      border-color: #00b3ff;
+      border-radius: 100px;
+      background-color: #00b3ff;
+      box-shadow: 0 0 20px #00b3ff;
+      transition: transform 0.5s ease;
+    }
+
+    .mail:hover {
+      transform: scale(1.2);
+    }
+
+    .mail a {
+      padding: .6vh;
+      font-size: calc(2.5vh + 2.5vw);
+      text-decoration: none;
+      color: black;
+    }
+
+    .back-button-container {
+      z-index: 99;
+      position: absolute;
+      top: 88vh;
+      left: 84vw;
+    }
+
+    .back-button {
+      background-color: rgba(22, 19, 26, 0.7);
+      border: 2px solid #00b3ff;
+      border-radius: 32px;
+      padding: 3vh 2vw;
+      text-decoration: none;
+      color: rgb(230, 224, 224);
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #00b3ff;
+    }
+
+    #feedback {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 99;
+      background-color: black;
+      border: 2px solid #00b3ff;
+      border-radius: 32px;
+      color: rgb(230, 224, 224);
+      font-size: 20px;
+      transition: background-color 0.3s ease;
+      top: 88vh;
+      left: 72vw;
+      height: 9vh;
+      width: 11vw;
+    }
+
+    .feedback-in {
+      padding: 3vh 1.2vw;
+      text-decoration: none;
+      color: rgb(230, 224, 224);
+      font-size: 20px;
+    }
+
+    #feedback:hover {
+      background-color: #00b3ff;
+    }
+
+    @keyframes blurEffect {
+      0% { opacity: 0; }
+      25% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    #sp1 {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: -200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+
+  <div class="content">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <spline-viewer id="sp1" url="https://prod.spline.design/uhvgNjL2Eyh0XemL/scene.splinecode"></spline-viewer>
+
+    <div class="name">
+      <p>Jaspreet's Portfolio</p>
+    </div>
+
+    <div class="navbar">
+      <a href="#" class="magnet" style="color: #00b3ff;">Home</a>
+      <a href="projecteffect.html" class="magnet">Project</a>
+      <a href="abouteffect.html" class="magnet">About</a>
+      <a href="achivementeffect.html" class="magnet">Achievements</a>
+      <a href="edueffect.html" class="magnet">Education</a>
+    </div>
+
+    <div class="text">
+      <p>Hello , It 's Me</p>
+      <p class="h1">Jaspreet Mehra</p>
+      <p>I Am A 1st Year Student</p><br>
+      <p>My Interests are coding, sports,</p>
+      <p>music and travel</p>
+    </div>
+
+    <div class="social-media">
+      <a href="https://m.me/Nipun Mehra" class="magnet"><i class="ri-facebook-circle-fill"></i></a>
+      <a href="https://www.instagram.com/jaspreet._021/" class="magnet"><i class="ri-instagram-fill"></i></a>
+      <a href="https://www.linkedin.com/in/nipun-mehra-4864a5308/" class="magnet"><i class="ri-linkedin-box-fill"></i></a>
+      <a href="https://www.snapchat.com/add/jaspreet-021" class="magnet"><i class="ri-snapchat-fill"></i></a>
+    </div>
+
+    <div class="mail magnet">
+      <a href="mailto:jaspreet0418.becse24@chitkara.edu.in"><i class="ri-mail-fill"></i> Gmail</a>
+    </div>
+
+    <div class="photo">
+      <video id="hoverVideo" autoplay muted playsinline loop src="Untitled design (2).mp4"></video>
+    </div>
+
+    <div class="back-button-container magnet">
+      <a href="/FEE%20Project/Open First/portfolio2.html" class="back-button">
+        <i class="ri-user-fill"></i> Portfolios
+      </a>
+    </div>
+
+    <div id="feedback" class="magnet">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVEwyK8oQf-HVjsrX0LUxLbLMRqT76zWsJo4tXwrRBtpMV8g/viewform?usp=header" class="feedback-in">
+        <i class="ri-survey-fill"></i> Feedback
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorTrail = document.querySelector('.cursor-trail');
+
+    document.addEventListener('mousemove', (e) => {
+      const { clientX: x, clientY: y } = e;
+      cursorDot.style.left = `${x}px`;
+      cursorDot.style.top = `${y}px`;
+      cursorTrail.style.left = `${x}px`;
+      cursorTrail.style.top = `${y}px`;
+    });
+
+    const magneticItems = document.querySelectorAll('.magnet');
+
+    magneticItems.forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+        const rect = item.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        item.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+      });
+
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = `translate(0, 0)`;
+        cursorTrail.style.opacity = '1';
+      });
+
+      item.addEventListener('mouseenter', () => {
+        cursorTrail.style.opacity = '0';
+      });
+    });
+
+    const video = document.getElementById('hoverVideo');
+    video.addEventListener('mouseenter', () => {
+      video.currentTime = 0;
+      video.play();
+    });
+  </script>
+</body>
+</html>

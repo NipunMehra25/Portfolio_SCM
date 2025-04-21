@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaspreet's Projects</title>
+  <link rel="stylesheet" href="projectJaspreet.css"/>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</head>
+<body>
+  <!-- Custom cursor elements -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Mobile menu button -->
+  <div class="mobile-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="bg-video">
+    <video autoplay muted playsinline loop src="Untitled design (1) (2).mp4"></video>
+  </div>
+
+
+  <spline-viewer id="model"
+    url="https://prod.spline.design/KzkRRUmqqhezUsS0/scene.splinecode">
+  </spline-viewer>
+
+  <div class="content">
+    <div class="name"><p>Jaspreet's Portfolio</p></div>
+
+    <div class="navbar hover-target">
+      <a href="homeeffect2.html" class="magnetic-link">Home</a>
+      <a href="#" style="color: #3118a0;" class="magnetic-link nohover">Project</a>
+      <a href="abouteffect.html" class="magnetic-link">About</a>
+      <a href="achivementeffect.html" class="magnetic-link">Achievements</a>
+      <a href="edueffect.html" class="magnetic-link">Education</a>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+      <button class="button" id="button1">
+        <div class="wrap">
+          <p><span>✧</span><span>✦</span> Front-End Projects</p>
+        </div>
+      </button>
+
+      <button class="button" id="button2">
+        <div class="wrap">
+          <p><span>✧</span><span>✦</span> Back-End Projects</p>
+        </div>
+      </button>
+    </div>
+
+    <!-- Frontend Cards -->
+    <div class="card-container hidden" id="frontend-cards">
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Weather App</div>
+          <div class="project-card-description">A React-based weather application with real-time updates and interactive UI.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Portfolio Site</div>
+          <div class="project-card-description">A responsive portfolio website with modern animations and interactive elements.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Animation Playground</div>
+          <div class="project-card-description">An interactive CSS animation playground to experiment with various animation effects.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Canvas</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Modern Calculator</div>
+          <div class="project-card-description">A sleek calculator application with modern UI and advanced features.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Math.js</span>
+          </div>
+        </div>
+      </div>
+      
+      <button class="back-button">⟵ Back to Projects</button>
+    </div>
+
+    <!-- Backend Cards -->
+    <div class="card-container hidden" id="backend-cards">
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">REST API</div>
+          <div class="project-card-description">A Node.js REST API for a TODO application with CRUD operations.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Auth System</div>
+          <div class="project-card-description">A secure authentication system using Express and MongoDB with JWT support.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">Cyrus AI Bot</div>
+          <div class="project-card-description">A versatile AI bot that integrates with various platforms to automate tasks.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">AI/ML</span>
+            <span class="tech-tag">API</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-card-content">
+          <div class="project-card-title">E-commerce Backend</div>
+          <div class="project-card-description">A microservice architecture for a scalable e-commerce platform.</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Microservices</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+      
+      <button class="back-button">⟵ Back to Projects</button>
+    </div>
+  </div>
+
+  <div class="disc">
+    This is just a prototype game.<br>
+    Use <strong>Right</strong>, <strong>Left</strong> arrow and <strong>Spacebar</strong> to play.
+  </div>
+  
+
+  <!-- JS Section -->
+  <script>
+// Wait for DOM content to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const frontBtn = document.getElementById("button1");
+  const backBtn = document.getElementById("button2");
+  const frontendCards = document.getElementById("frontend-cards");
+  const backendCards = document.getElementById("backend-cards");
+  const buttons = [frontBtn, backBtn];
+  
+  // Mobile menu toggle
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navbar = document.querySelector('.navbar');
+
+  if (mobileMenuBtn && navbar) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      mobileMenuBtn.classList.toggle('active');
+      console.log('Mobile menu clicked'); // For debugging
+    });
+  }
+
+  // Close navbar when clicking outside of it
+  document.addEventListener('click', (event) => {
+    const isNavbar = event.target.closest('.navbar');
+    const isMenuBtn = event.target.closest('.mobile-menu-btn');
+    
+    if (navbar && navbar.classList.contains('active') && !isNavbar && !isMenuBtn) {
+      navbar.classList.remove('active');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
+      }
+    }
+  });
+
+  // Close navbar on nav link click (for mobile)
+  const navLinks = document.querySelectorAll('.navbar a');
+  if (navLinks.length > 0) {
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbar && navbar.classList.contains('active')) {
+          navbar.classList.remove('active');
+          if (mobileMenuBtn) {
+            mobileMenuBtn.classList.remove('active');
+          }
+        }
+      });
+    });
+  }
+
+  // Close navbar when scrolling
+  let lastScrollPosition = 0;
+  window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.pageYOffset;
+    
+    if (navbar && navbar.classList.contains('active') && 
+        Math.abs(currentScrollPosition - lastScrollPosition) > 30) {
+      navbar.classList.remove('active');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
+      }
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+  });
+
+  // Enhanced card animations
+  function showCards(cardsToShow) {
+    // Fade out and disable both buttons
+    buttons.forEach(btn => {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    });
+
+    // After fade-out, hide buttons completely and show cards container
+    setTimeout(() => {
+      buttons.forEach(btn => {
+        btn.classList.add("hidden-buttons");
+      });
+
+      cardsToShow.classList.remove("hidden");
+      cardsToShow.classList.add("show");
+      
+      // Animate individual cards with staggered delay
+      const cards = cardsToShow.querySelectorAll('.project-card');
+      cards.forEach((card, index) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        
+        setTimeout(() => {
+          card.style.opacity = "1";
+          card.style.transform = "translateY(0)";
+        }, 100 * index); // Stagger the animations
+      });
+      
+      // Make back button visible after cards
+      const backButton = cardsToShow.querySelector('.back-button');
+      if(backButton) {
+        backButton.style.opacity = "0";
+        setTimeout(() => {
+          backButton.style.opacity = "1";
+        }, cards.length * 100 + 200); // Show after all cards
+      }
+    }, 500);
+  }
+
+  function hideCards(cardsToHide) {
+    // Check if cards container is even visible
+    if (!cardsToHide.classList.contains('show')) return;
+    
+    // Animate cards out first
+    const cards = cardsToHide.querySelectorAll('.project-card');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+      }, 50 * index); // Stagger the animations
+    });
+    
+    // Animate back button out
+    const backButton = cardsToHide.querySelector('.back-button');
+    if(backButton) {
+      backButton.style.opacity = "0";
+    }
+
+    // Then hide the container
+    setTimeout(() => {
+      cardsToHide.classList.remove("show");
+      cardsToHide.classList.add("hidden");
+
+      // Show and fade-in buttons again
+      setTimeout(() => {
+        buttons.forEach(btn => {
+          btn.classList.remove("hidden-buttons");
+          btn.style.opacity = "1";
+          btn.style.pointerEvents = "all";
+        });
+      }, 300);
+    }, cards.length * 50 + 300);
+  }
+
+  // Button click events
+  if (frontBtn) {
+    frontBtn.addEventListener("click", () => showCards(frontendCards));
+  }
+  
+  if (backBtn) {
+    backBtn.addEventListener("click", () => showCards(backendCards));
+  }
+
+  // Back buttons inside card containers
+  document.querySelectorAll(".back-button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      hideCards(frontendCards);
+      hideCards(backendCards);
+    });
+  });
+
+  // Check if device is touch-enabled
+  const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0));
+  };
+
+  // Only enable custom cursor on non-touch devices
+  if (!isTouchDevice()) {
+    // Custom cursor code
+    const dot = document.querySelector('.cursor-dot');
+    const trail = document.querySelector('.cursor-trail');
+    
+    if (dot && trail) {
+      let mouseX = 0, mouseY = 0;
+      let trailX = 0, trailY = 0;
+      
+      // Set initial positions
+      dot.style.left = '50%';
+      dot.style.top = '50%';
+      trail.style.left = '50%';
+      trail.style.top = '50%';
+      
+      // Update cursor position on mouse move
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Update dot immediately
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+      });
+      
+      // Animate the trail with requestAnimationFrame for smooth performance
+      function animateTrail() {
+        // Calculate the distance between mouse and trail
+        const dx = mouseX - trailX;
+        const dy = mouseY - trailY;
+        
+        // Easing - move trail toward mouse position
+        trailX += dx * 0.7;
+        trailY += dy * 0.7;
+        
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 30, 0.5);
+
+        trail.style.left = `${trailX}px`;
+        trail.style.top = `${trailY}px`;
+        trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.4})`;
+        
+        // Continue animation
+        requestAnimationFrame(animateTrail);
+      }
+      
+      // Start animation
+      animateTrail();
+      
+      // Make cursor bigger on hover over links and buttons
+      const hoverElements = document.querySelectorAll('a, button, .project-card');
+      hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          trail.style.width = '60px';
+          trail.style.height = '60px';
+          trail.style.background = 'rgba(0, 179, 255, 0.4)';
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          trail.style.width = '40px';
+          trail.style.height = '40px';
+          trail.style.background = 'white';
+        });
+      });
+      
+      // Hide default cursor
+      document.body.style.cursor = 'none';
+      
+      // Hover color change on navbar items
+      const hoverTargets = document.querySelectorAll('.hover-target');
+      hoverTargets.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          if (trail) trail.style.background = '#003b3f'; // highlight color
+        });
+
+        el.addEventListener('mouseleave', () => {
+          if (trail) trail.style.background = 'white'; // Revert color
+        });
+      });
+
+      // Magnetic effect on navbar links
+      const magneticLinks = document.querySelectorAll('.magnetic-link');
+      magneticLinks.forEach(link => {
+        link.addEventListener('mousemove', (e) => {
+          const rect = link.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          link.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px) scale(1.05)`;
+        });
+
+        link.addEventListener('mouseleave', () => {
+          link.style.transform = `translate(0, 0) scale(1)`;
+        });
+      });
+
+      // Hide trail when hovering over links
+      const links = document.querySelectorAll('a, .back-button');
+      links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          if (trail) trail.style.opacity = '0';
+        });
+
+        link.addEventListener('mouseleave', () => {
+          if (trail) trail.style.opacity = '1';
+        });
+      });
+    }
+  } else {
+    // Hide cursor elements on touch devices
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorTrail = document.querySelector('.cursor-trail');
+    
+    if (cursorDot) cursorDot.style.display = 'none';
+    if (cursorTrail) cursorTrail.style.display = 'none';
+
+    // Remove cursor: none from body
+    document.body.style.cursor = 'auto';
+  }
+
+  // Handle Spline visibility on mobile
+  function handleSplineVisibility() {
+    const splineViewer = document.getElementById('model');
+    if (splineViewer) {
+      if (window.innerWidth < 768) {
+        splineViewer.style.opacity = '0.3';
+        splineViewer.style.pointerEvents = 'none';
+      } else {
+        splineViewer.style.opacity = '1';
+        splineViewer.style.pointerEvents = 'auto';
+      }
+    }
+  }
+
+  // Handle Spline visibility on resize
+  window.addEventListener('resize', handleSplineVisibility);
+  
+  // Initialize
+  if (frontBtn && backBtn) {
+    frontBtn.style.opacity = "1";
+    backBtn.style.opacity = "1";
+    frontBtn.style.pointerEvents = "all";
+    backBtn.style.pointerEvents = "all";
+  }
+  
+  // Check Spline visibility on load
+  handleSplineVisibility();
+
+  // Also close navbar when window is resized to desktop size
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navbar && navbar.classList.contains('active')) {
+      navbar.classList.remove('active');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
+      }
+    }
+  });
+});
+  </script>
+  
+  </body>
+</html>

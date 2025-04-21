@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jaspreet's Achievements</title>
+
+  <!-- Linking external CSS -->
+  <link rel="stylesheet" href="achivements.css" />
+</head>
+<body>
+
+  <!-- ===== Main Container ===== -->
+  <div class="content">
+
+    <!-- ===== 3D Viewer from Spline ===== -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    <spline-viewer 
+      id="model" 
+      url="https://prod.spline.design/s6mX9eaDAqJVKXf1/scene.splinecode">
+    </spline-viewer>
+
+    <!-- ===== Title/Name Section ===== -->
+    <div class="name">
+      <p>Jaspreet's Portfolio</p>
+    </div>
+
+    <!-- ===== Navigation Bar ===== -->
+    <div class="navbar">
+      <a href="homeeffect2.html">Home</a>
+      <a href="projecteffect.html">Project</a>
+      <a href="abouteffect.html">About</a>
+      <a href="#" style="color: #00b3ff;">Achievements</a>
+      <a href="edueffect.html">Education</a>
+    </div>
+
+    <!-- ===== 3D Cube Section ===== -->
+    <div class="scene" id="scene">
+      <div class="cube" id="cube">
+        <!-- Each face of the cube -->
+        <div class="face front" id="face1">House<br>Captain</div>
+        <div class="face back" id="face2">U-17 UT<br>Chess<br>Champion</div>
+        <div class="face left" id="face3">U-17 UT<br>Cricket<br>Champion</div>
+        <div class="face right" id="face4">NCC A <br>Certificate</div>
+        <div class="face top" id="face5">NDA-153<br>Cleared</div>
+        <div class="face bottom" id="face6">19-SSB<br>Allahbad<br>Confrence out</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Description Text ===== -->
+  <div class="disc">
+    These are my Achievements.<br>
+    Click on the cube to open.
+  </div>
+
+  <!-- ===== JavaScript Functionality ===== -->
+  <script>
+    // Getting references to DOM elements
+    const scene = document.getElementById("scene");
+    const cube = document.getElementById("cube");
+    const faces = document.querySelectorAll(".face");
+    let lastMovedFace = null; // Stores the last clicked face
+
+    // Expand cube on click
+    cube.addEventListener("click", function(event) {
+      event.stopPropagation(); // Prevent bubbling
+
+      // Only expand if not already expanded
+      if (!scene.classList.contains("expanded")) {
+        scene.classList.add("expanded");
+        scene.style.animation = "none"; // Stop rotation
+
+        // Reset face states
+        faces.forEach(face => face.classList.remove("move"));
+
+        // Add click listeners to each face
+        faces.forEach(face => face.addEventListener("click", moveFace));
+      }
+    });
+
+    // Handle clicking a face
+    function moveFace(event) {
+      event.stopPropagation(); // Prevent background click from collapsing cube
+
+      if (scene.classList.contains("expanded")) {
+        // Remove previous face's move state
+        if (lastMovedFace && lastMovedFace !== this) {
+          lastMovedFace.classList.remove("move");
+        }
+
+        // Move clicked face
+        this.classList.add("move");
+        lastMovedFace = this;
+      }
+    }
+
+    // Collapse cube when clicking anywhere else
+    document.addEventListener("click", function() {
+      if (scene.classList.contains("expanded")) {
+        scene.classList.remove("expanded");
+        scene.style.animation = "rotate 5s infinite linear"; // Resume rotation
+
+        // Remove movement and event listeners
+        faces.forEach(face => {
+          face.classList.remove("move");
+          face.removeEventListener("click", moveFace);
+        });
+
+        lastMovedFace = null; // Reset reference
+      }
+    });
+  </script>
+
+</body>
+</html>
