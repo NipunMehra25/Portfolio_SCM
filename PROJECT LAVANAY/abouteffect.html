@@ -42,29 +42,27 @@ document.addEventListener('mousemove', e => {
 });
 
 // Animate the trailing white circle
-
 function animateTrail() {
-const dx = mouseX - trailX;
-const dy = mouseY - trailY;
+  const dx = mouseX - trailX;
+  const dy = mouseY - trailY;
 
-trailX += dx * 0.175;
-trailY += dy * 0.175;
+  trailX += dx * 0.175;
+  trailY += dy * 0.175;
 
-const angle = Math.atan2(dy, dx) * 180 / Math.PI;
-const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 120, 0.8);
+  const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+  const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 120, 0.8);
 
-trail.style.left = `${trailX}px`;
-trail.style.top = `${trailY}px`;
-trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.3})`;
+  trail.style.left = `${trailX}px`;
+  trail.style.top = `${trailY}px`;
+  trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.3})`;
 
-requestAnimationFrame(animateTrail);
+  requestAnimationFrame(animateTrail);
 }
 animateTrail();
 
 // ===== 🎨 Trail Hover Color Change on Icons =====
-
- const hoverTargets = document.querySelectorAll('.icon-button i,.hover-target');
- hoverTargets.forEach(el => {
+const hoverTargets = document.querySelectorAll('.icon-button i,.hover-target');
+hoverTargets.forEach(el => {
   el.addEventListener('mouseenter', () => {
     trail.style.background = '#6f1ee0'; // Purple highlight
   });
