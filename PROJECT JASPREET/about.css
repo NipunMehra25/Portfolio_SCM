@@ -88,7 +88,7 @@ video {
     color: #ffffff;
     top: 6vh;
     left: 8vw;
-    font-size:calc(2vh + 1.5vw);
+    font-size:calc(1vh + 1vw);
     font-family: myfont;
 }
 
