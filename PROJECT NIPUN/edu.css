@@ -8,6 +8,11 @@
     
 }
 
+
+.bg-video{
+    display:none ;
+}
+
 #model{
     z-index: 0;
     position: absolute;
@@ -65,7 +70,7 @@ video {
     display: flex;
     position: fixed;
     top: 2vh;
-    left: 45vw;
+    left: 43vw;
     width: 50vw;
     height: 10vh;
     align-items: center;
@@ -81,17 +86,7 @@ video {
     animation: blureffect2 2s linear;
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    display: block;
-    margin-top: 8px;
-    right: 0;
-    background: linear-gradient(to right, #00b3ff, #00b3ff);
-    transition: width 0.3s ease-in-out;
-}
+
 
 .navbar a:hover::after {
     width: 100%;
@@ -194,3 +189,348 @@ body {
     line-height: 1.6;
     margin: 10px 0 0;
 }
+
+
+
+/* Mobile Menu Button (Add this to your CSS) */
+.mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: url("starter-northern-lights-pointer.png"), auto;
+  }
+  
+  .mobile-menu-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #00b3ff;
+    transition: all 0.3s ease;
+  }
+
+
+
+/* Magnetic button style */
+.magnetic-link {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Magnetic hover background effect */
+.magnetic-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 12px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+
+/* Hover style for magnetic link */
+.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: #00b3ff;
+}
+
+/* Override for navbar magnetic link */
+.navbar .nohover.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: white;
+}
+
+
+.navbar a:hover::after {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+
+/* Custom cursor styles */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  display: none; /* Initially hidden, shown by JS on non-touch devices */
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode:difference; /* This creates the inversion effect */
+  transition: width 0.3s, height 0.3s;
+  display: none; /* Initially hidden, shown by JS on non-touch devices */
+}
+
+/* For non-touch devices, remove default cursor */
+body:not(.touch-device) {
+  cursor: none !important;
+}
+
+body:not(.touch-device) * {
+  cursor: none !important;
+}
+
+
+  
+  /* Responsive Styles */
+
+
+
+
+  
+  @media (max-width: 1024px) {
+    .timeline {
+      width: 70vw;
+      left: 15vw;
+    }
+    
+    #model {
+      right: -35vw;
+    }
+    /* Background video styling */
+
+
+  }
+  
+  @media (max-width: 768px) {
+    * {
+      overflow: visible;
+    }
+    
+    body {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: auto;
+      min-height: 100vh;
+    }
+    
+    #model {
+      display: none;
+    }
+    
+    .timeline {
+      width: 85vw;
+      left: 7.5vw;
+      top: 15vh;
+      padding: 2vh 0;
+    }
+    
+    .timeline-year {
+      width: 15vw;
+      font-size: 16px;
+    }
+    
+    .timeline-content {
+      margin-left: 3vw;
+    }
+    
+    .institution-name {
+      font-size: 18px;
+    }
+    
+    .location, .description {
+      font-size: 14px;
+    }
+    
+    /* Mobile Navigation */
+    .navbar {
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: flex-start;
+      padding-top: 80px;
+      transition: right 0.3s ease-in-out;
+      z-index: 99;
+      left: auto;
+    }
+  
+    .navbar.active {
+      right: 0;
+    }
+  
+    .navbar a {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+    
+    .mobile-menu-btn {
+      display: flex;
+    }
+    
+    .name {
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+    }
+    .bg-video {
+        display: block;
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%; 
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .bg-video video {
+        display: block;
+        position: absolute;
+        width: 100vw; 
+        height: 110vh; 
+        object-fit: cover; 
+        z-index: -1;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    .timeline {
+      width: 90vw;
+      left: 5vw;
+      top: 12vh;
+    }
+    
+    .timeline-item {
+      flex-direction: column;
+      margin-bottom: 6vh;
+    }
+    
+    .timeline-year {
+      width: 100%;
+      margin-bottom: 2vh;
+      font-size: 16px;
+      padding: 1vh;
+    }
+    
+    .timeline-content {
+      margin-left: 0;
+      padding-left: 4vw;
+      border-left: 2px solid #9a9a9a;
+    }
+    
+    .timeline-content::before {
+      left: -1.7vw;
+      width: 3vw;
+      height: 1.5vh;
+      border-radius: 50%;
+
+    }
+    
+    .institution-name {
+      font-size: 16px;
+    }
+    
+    .location, .description {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+        .name {
+          top: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: 24px;
+          text-align: center;
+        }
+        .bg-video {
+            display: block;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%; 
+            height: 100%; 
+            z-index: -1;
+            overflow: hidden;
+        }
+    
+        .bg-video video {
+            display: block;
+            position: absolute;
+            width: 100vw; 
+            height: 110vh; 
+            object-fit: cover; 
+            z-index: -1;
+        }
+    
+      
+    
+  }
+  
+  @media (max-width: 360px) {
+    .timeline {
+      top: 10vh;
+    }
+    
+    .timeline-year {
+      font-size: 14px;
+    }
+    
+    .institution-name {
+      font-size: 15px;
+    }
+    
+    .location, .description {
+      font-size: 13px;
+    }
+    
+    .name {
+      font-size: 16px;
+    }
+  }
+
+/* Hide spline on mobile */
+@media (max-width: 768px) {
+    #model {
+        display: none;
+    }
+  }
+
+
