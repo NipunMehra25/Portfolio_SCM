@@ -2,14 +2,14 @@
     padding:0%;
     margin: 0%;
     font-family: myfont;
-    /* cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; */
+    cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto;
     font-family: "Bebas Neue", sans-serif;
 }
 
-* a{
-    /* cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; */
-}
 
+a{
+    cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; 
+}
 html,body{
     height: 100%;
     width: 100%;
