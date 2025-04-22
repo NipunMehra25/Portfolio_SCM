@@ -1,41 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nipun's Home Page</title>
-    <link rel="stylesheet" href="edueffect.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Timeline</title>
+  <link rel="stylesheet" href="edu.css">
 </head>
 <body>
-    <div class="content">
-        <section>
-            <video src="smoke.mp4" autoplay muted></video>
-            <h1>
-                <span>E</span>
-                <span>D</span>
-                <span>U</span>
-                <span>C</span>
-                <span>A</span>
-                <span>T</span>
-                <span>I</span>
-                <span>O</span>
-                <span>N</span>
-            </h1>
-        </section>
-    </div>
-    <script>
-        // Automatically navigate to homenipun.html after 8 seconds
-        const timeout = setTimeout(function() {
-            window.location.href = 'edu.html'; // Navigate to homenipun.html
-        }, 8000); // 8000ms = 8 seconds
 
-        // Skip the wait and go to homenipun.html when "Enter" is pressed
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                clearTimeout(timeout); // Cancel the automatic redirection
-                window.location.href = 'edu.html'; // Navigate immediately
-            }
+  <!-- Custom cursor elements -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+    
+  <div class="content">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+    
+    <spline-viewer id="model" url="https://prod.spline.design/skbJVgdbAFxuU7DZ/scene.splinecode"></spline-viewer>
+    
+    <div class="name">
+      <p>Nipun's Portfolio</p>
+    </div>
+
+    <div class="bg-video">
+        <video autoplay muted playsinline loop src="Untitled design (1) (2).mp4"></video>
+    </div>
+    
+    <button class="mobile-menu-btn" id="mobile-menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="navbar" id="navbar">
+      <a href="homeeffect2.html" class="magnetic-link">Home</a>
+      <a href="projecteffect.html" class="magnetic-link">Project</a>
+      <a href="abouteffect.html" class="magnetic-link">About</a>
+      <a href="achivementeffect.html" class="magnetic-link">Achievements</a>
+      <a href="#" style="color: #00b3ff;" class="magnetic-link nohover">Education</a>
+    </div>
+    
+    <div class="timeline">
+      <!-- Start with the earliest timeline item -->
+      <div class="timeline-item">
+        <div class="timeline-year">2010<br>-<br>2022</div>
+        <div class="timeline-content">
+          <p class="institution-name">St. Kabir Public School</p>
+          <p class="location">Sec-26, Chandigarh, India</p>
+          <p class="description">
+            Completed primary education with a focus on foundational academic skills and personal development.
+          </p>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-year">2022<br>-<br>2024</div>
+        <div class="timeline-content">
+          <p class="institution-name">SGGS</p>
+          <p class="location">Sec-26, Chandigarh, India</p>
+          <p class="description">
+            Pursued secondary education with a specialization in science, setting the foundation for technical studies.
+          </p>
+        </div>
+      </div>
+      
+      <!-- End with the latest timeline item -->
+      <div class="timeline-item">
+        <div class="timeline-year">2024<br>-<br>2028</div>
+        <div class="timeline-content">
+          <p class="institution-name">Chitkara University</p>
+          <p class="location">Rajpura, Punjab, India</p>
+          <p class="description">
+            Currently studing Bachelor's degree in Computer Science, gaining skills in software development, programming, and project management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Detect touch device
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) ||
+          (navigator.maxTouchPoints > 0) ||
+          (navigator.msMaxTouchPoints > 0));
+    };
+
+    // Add class to body if touch device
+    if (isTouchDevice()) {
+      document.body.classList.add('touch-device');
+    } else {
+      // Only enable custom cursor on non-touch devices
+      const dot = document.querySelector('.cursor-dot');
+      const trail = document.querySelector('.cursor-trail');
+      
+      if (dot && trail) {
+        // Show cursor elements
+        dot.style.display = 'block';
+        trail.style.display = 'block';
+        
+        let mouseX = 0, mouseY = 0;
+        let trailX = 0, trailY = 0;
+        
+        // Set initial positions
+        dot.style.left = '50%';
+        dot.style.top = '50%';
+        trail.style.left = '50%';
+        trail.style.top = '50%';
+        
+        // Update cursor position on mouse move
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          
+          // Update dot immediately
+          dot.style.left = mouseX + 'px';
+          dot.style.top = mouseY + 'px';
         });
-    </script>
+        
+        // Animate the trail with requestAnimationFrame for smooth performance
+        function animateTrail() {
+          // Calculate the distance between mouse and trail
+          const dx = mouseX - trailX;
+          const dy = mouseY - trailY;
+          
+          // Easing - move trail toward mouse position
+          trailX += dx * 0.7;
+          trailY += dy * 0.7;
+          
+          const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+          const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 30, 0.5);
+
+          trail.style.left = `${trailX}px`;
+          trail.style.top = `${trailY}px`;
+          trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.4})`;
+          
+          // Continue animation
+          requestAnimationFrame(animateTrail);
+        }
+        
+        // Start animation
+        animateTrail();
+        
+        // Make cursor bigger on hover over links and buttons
+        const hoverElements = document.querySelectorAll('a, button, .face');
+        hoverElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            trail.style.width = '60px';
+            trail.style.height = '60px';
+            trail.style.background = 'rgba(0, 179, 255, 0.4)';
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            trail.style.width = '40px';
+            trail.style.height = '40px';
+            trail.style.background = 'white';
+          });
+        });
+        
+        // Hide trail when hovering over links
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            trail.style.opacity = '0';
+          });
+
+          link.addEventListener('mouseleave', () => {
+            trail.style.opacity = '1';
+          });
+        });
+        
+        // Magnetic effect on navbar links
+        const magneticLinks = document.querySelectorAll('.magnetic-link');
+        magneticLinks.forEach(link => {
+          link.addEventListener('mousemove', (e) => {
+            const rect = link.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            link.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px) scale(1.05)`;
+          });
+
+          link.addEventListener('mouseleave', () => {
+            link.style.transform = `translate(0, 0) scale(1)`;
+          });
+        });
+      }
+    }
+
+    const scene = document.getElementById("scene");
+    const cube = document.getElementById("cube");
+    const faces = document.querySelectorAll(".face");
+    let lastMovedFace = null;
+    
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const navbar = document.querySelector(".navbar"); // Changed to querySelector
+    
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener("click", function() {
+        navbar.classList.toggle("active");
+        
+        // Animate hamburger to X
+        const spans = this.querySelectorAll("span");
+        if (navbar.classList.contains("active")) {
+          spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
+        } else {
+          spans[0].style.transform = "none";
+          spans[1].style.opacity = "1";
+          spans[2].style.transform = "none";
+        }
+      });
+    }
+
+    if (cube) {
+      cube.addEventListener("click", function(event) {
+        event.stopPropagation();
+        if (!scene.classList.contains("expanded")) {
+          scene.classList.add("expanded");
+          scene.style.animation = "none"; // Stop rotation animation on .scene
+          faces.forEach(face => {
+            face.classList.remove("move");
+            face.classList.remove("show-description");
+            face.addEventListener("click", moveFace);
+          });
+        }
+      });
+    }
+
+    function moveFace(event) {
+      event.stopPropagation();
+      if (scene.classList.contains("expanded")) {
+        const clickedFace = this;
+        
+        // If clicking on the already moved face, do nothing (since description is already showing)
+        if (lastMovedFace === clickedFace) {
+          return;
+        } else {
+          // If there was a previously moved face, reset it
+          if (lastMovedFace) {
+            lastMovedFace.classList.remove("move");
+            lastMovedFace.classList.remove("show-description");
+          }
+          
+          // Move the clicked face, show its description, and make it the new lastMovedFace
+          clickedFace.classList.add("move");
+          clickedFace.classList.add("show-description"); // Add this line to show description automatically
+          lastMovedFace = clickedFace;
+        }
+      }
+    }
+    
+    document.addEventListener("click", function(event) {
+      // Don't close if clicking on navbar or mobile menu
+      if ((navbar && navbar.contains(event.target)) || 
+          (mobileMenuBtn && mobileMenuBtn.contains(event.target))) {
+        return;
+      }
+      
+      if (scene && scene.classList.contains("expanded")) {
+        scene.classList.remove("expanded");
+        scene.style.animation = "rotate 5s infinite linear"; 
+        faces.forEach(face => {
+          face.classList.remove("move");
+          face.classList.remove("show-description");
+          face.removeEventListener("click", moveFace);
+        });
+        lastMovedFace = null;
+      }
+    });
+  </script>
 </body>
 </html>
