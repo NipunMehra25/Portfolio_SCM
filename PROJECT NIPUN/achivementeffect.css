@@ -1,128 +1,177 @@
-*{
-    padding:0%;
-    margin: 0%;
-    cursor: url("starter-northern-lights-cursor.png"), auto;
+* {
+    padding: 0;
+    margin: 0;
     font-family: myfont;
-
-}
-
-@font-face{
+    cursor: none;
+  }
+  
+  @font-face {
     font-family: myfont;
     src: url(Warpen.otf);
-}
-
-body{
+  }
+  
+  body {
     height: 100%;
     width: 100%;
     overflow: hidden;
     background-color: black;
-}
-
-section:before{
+  }
+  
+  /* Custom cursor */
+  .cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cursor-trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+  }
+  
+  /* Gradient overlay on video */
+  section::before {
     content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(#00b3ff,rgb(0, 255, 242));
+    background: linear-gradient(#00b3ff, rgb(0, 255, 242));
     mix-blend-mode: color;
     pointer-events: none;
-}
-
-h1{
-    display: flex;
+  }
+  
+  /* Title text */
+  h1 {
     position: absolute;
     top: 40%;
-    left: 8%;
+    left: 5%;
+    font-size: 10vh;
+    color: #00b3ff;
     text-align: center;
-    justify-content: center;
-    font-size: 100px;
-    color:#00b3ff;
-    
-}
-
-h1 span{
-    opacity: 0;
+    white-space: nowrap;
+  }
+  
+  h1 span {
+    opacity: 0; /* start fully hidden */
     display: inline-block;
-    animation:animate 1s linear forwards;
-}
-
-section video{
+    animation: animate 1s linear forwards;
+  }
+  
+  /* Animation keyframes */
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+      filter: blur(0px);
+    }
+  }
+  
+  /* Animate one-by-one using delay */
+  h1 span:nth-child(1) { animation-delay: 0.8s; }
+  h1 span:nth-child(2) { animation-delay: 1.2s; }
+  h1 span:nth-child(3) { animation-delay: 1.6s; }
+  h1 span:nth-child(4) { animation-delay: 2s; }
+  h1 span:nth-child(5) { animation-delay: 2.4s; }
+  h1 span:nth-child(6) { animation-delay: 2.8s; }
+  h1 span:nth-child(7) { animation-delay: 3.2s; }
+  h1 span:nth-child(8) { animation-delay: 3.6s; }
+  h1 span:nth-child(9) { animation-delay: 4s; }
+  h1 span:nth-child(10){ animation-delay: 4.4s; }
+  h1 span:nth-child(11){ animation-delay: 4.8s; }
+  h1 span:nth-child(12){ animation-delay: 5.2s; }
+    
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg);
+      filter: blur(0px);
+    }
+  }
+  
+  /* Fade out container */
+  .content {
+    animation: fadeout 1s linear 7s forwards;
+  }
+  
+  @keyframes fadeout {
+    0%, 50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Background video */
+  section video {
+    position: absolute;
     height: 100%;
     width: 100%;
-}
-
-@keyframes animate {
-    0%{
-        opacity: 0%;
-        transform: rotateY(90deg);
-        filter: blur(10px);
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 5vh;
+      left: 50%;
+      transform: translateX(-50%);
     }
-    100%{
-        opacity: 100%;
-        transform: rotateY(0deg);
-        filter: blur(0px);
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 4vh;
+      left: 50%;
+      transform: translateX(-50%);
     }
-}
-
-h1 span:nth-child(1)
-{
-    animation-delay: 0.8s;
-}
-h1 span:nth-child(2)
-{
-    animation-delay: 1.2s;
-}h1 span:nth-child(3)
-{
-    animation-delay: 1.6s;
-}h1 span:nth-child(4)
-{
-    animation-delay: 2s;
-}
-h1 span:nth-child(5)
-{
-    animation-delay: 2.4s;
-}
-h1 span:nth-child(6)
-{
-    animation-delay: 2.8s;
-}h1 span:nth-child(7)
-{
-    animation-delay: 3.2s;
-}h1 span:nth-child(8)
-{
-    animation-delay: 3.6s;
-}
-h1 span:nth-child(9)
-{
-    animation-delay: 4s;
-}
-h1 span:nth-child(10)
-{
-    animation-delay: 4.4s;
-}h1 span:nth-child(11)
-{
-    animation-delay: 4.8s;
-}
-h1 span:nth-child(12)
-{
-    animation-delay: 5.2s;
-}
-
-
-@keyframes fadeout{
-    0%{
-        opacity: 1;
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3vh;
+      left: 5%;
+      transform: none;
     }
-    50%{
-        opacity: 1;
+  
+    .content {
+      padding: 0 10px;
     }
-    100%{
-        opacity: 0;
+  }
+  
+  /* Hide custom cursor on touch devices */
+  @media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-trail {
+      display: none;
     }
-}
-
-.content{
-    animation: fadeout 1s linear 7s forwards;
-}
+  }
+  
