@@ -1,10 +1,39 @@
 *{
     padding:0%;
     margin: 0%;
-    cursor: url("starter-northern-lights-cursor.png"), auto;
+    cursor: none;
     font-family: myfont;
 
 }
+
+
+/* Cursor dot style */
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+}
+
+/* Cursor trail style */
+.cursor-trail {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+}
+
+
 
 @font-face{
     font-family: myfont;
@@ -113,3 +142,51 @@ h1 span:nth-child(9)
 .content{
     animation: fadeout 1s linear 7s forwards;
 }
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 80px;
+        left: 10%;
+    }
+}
+
+/* Mobile (landscape & portrait) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+        top: 45%;
+        left: 5%;
+    }
+
+    section video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px;
+        top: 50%;
+        left: 5%;
+    }
+}
+
+
+
+  /* Hide custom cursor on touch devices */
+  @media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-trail {
+      display: none;
+    }
+  }
+  
