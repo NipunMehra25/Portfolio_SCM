@@ -3,11 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Bebas Neue", sans-serif;
-    /* cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; */
+      cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; 
 }
 
-* a{
-    /* cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; */
+a{
+    cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; 
 }
 
 .video-background {
