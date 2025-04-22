@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
   <title>Hardik's Achievements</title>
+
+  <!-- Linking external CSS -->
   <link rel="stylesheet" href="achivementsa.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <!-- Google Fonts - Bebas Neue -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+
 </head>
 <body>
-  <div class="bg-video">
-    <video autoplay muted playsinline loop src="15451-264243720_tiny.mp4"></video>
-  </div>
 
-  <!-- Header with logo and navbar -->
-  <div class="header">
-    <div class="logo">
+  <!-- ===== Main Container ===== -->
+  <div class="content">
+  
+
+   
+    <!-- ===== Title/Name Section ===== -->
+    <div class="name">
       <a href="#" style="color: #08d676;">Hardik's Portfolio</a>
     </div>
+
+    <!-- ===== Navigation Bar ===== -->
     <div class="navbar">
       <a href="homehardik.html" style="color: red;">Home</a>
       <a href="projecteffecta.html">Project</a>
@@ -26,72 +32,85 @@
       <a href="#" style="color: #08d676;">Achievements</a>
       <a href="edueffecta.html">Education</a>
     </div>
-  </div>
 
- <!-- <div class="scene">
-  <div class="pyramid">
-    <div class="face face1">TEAM CAPTAIN</div>
-    <div class="face face2">PYTHON QUIZ</div>
-    <div class="face face3">HACKATHON</div>
-    <div class="face face4">PROJECT WIN</div>
-    <div class="base"></div>
-  </div> -->
-  <div class="scene">
-    <div class="pyramid">
-      <div class="face front"></div>
-      <div class="face back"></div>
-      <div class="face left"></div>
-      <div class="face right"></div>
-      <div class="face base"></div>
+    <!-- ===== 3D Cube Section ===== -->
+    <div class="scene" id="scene">
+      <div class="cube" id="cube">
+        <!-- Each face of the cube -->
+        <div class="face front" id="face1">House<br>Captain</div>
+        <div class="face back" id="face2">U-19 Zonal<br>Chess<br>Champion</div>
+        <div class="face left" id="face3">U-17 Zonal<br>Basketball<br>Champion</div>
+        <div class="face right" id="face4">Science exhibition 3rd prize winner <br></div>
+        <div class="face top" id="face5">U-17 District<br>Chess <br>Champion</div>
+        <div class="face bottom" id="face6">U-17 Football Team <br>Captain</div>
+      </div>
     </div>
   </div>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>3D Pyramid Animation</title>
-      <link rel="stylesheet" href="styles.css">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  </head>
-  <body>
-      <section>
-          <div class="content">
-              <!-- <h1>
-                  <span>W</span>
-                  <span>E</span>
-                  <span>L</span>
-                  <span>C</span>
-                  <span>O</span>
-                  <span>M</span>
-                  <span>E</span>
-                  <span>&nbsp;</span>
-                  <span>H</span>
-                  <span>E</span>
-                  <span>R</span>
-                  <span>E</span>
-              </h1> -->
-          </div>
-          <video autoplay muted loop>
-              <source src="background.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-      </section>
-  
-      <div class="pyramid-container">
-          <div class="pyramid">
-              <div class="pyramid-face front"></div>
-              <div class="pyramid-face right"></div>
-              <div class="pyramid-face back"></div>
-              <div class="pyramid-face left"></div>
-              <div class="pyramid-face bottom"></div>
-          </div>
-      </div>
-  
-      <script src="script.js"></script>
-  </body>
-  </html>
 
+  <!-- ===== Description Text ===== -->
+  <div class="disc">
+    These are my Achievements.<br>
+    Click on the cube to open.
+  </div>
 
+  <!-- ===== JavaScript Functionality ===== -->
+  <script>
+    // Getting references to DOM elements
+    const scene = document.getElementById("scene");
+    const cube = document.getElementById("cube");
+    const faces = document.querySelectorAll(".face");
+    let lastMovedFace = null; // Stores the last clicked face
+
+    // Expand cube on click
+    cube.addEventListener("click", function(event) {
+      event.stopPropagation(); // Prevent bubbling
+
+      // Only expand if not already expanded
+      if (!scene.classList.contains("expanded")) {
+        scene.classList.add("expanded");
+        scene.style.animation = "none"; // Stop rotation
+
+        // Reset face states
+        faces.forEach(face => face.classList.remove("move"));
+
+        // Add click listeners to each face
+        faces.forEach(face => face.addEventListener("click", moveFace));
+      }
+    });
+
+    // Handle clicking a face
+    function moveFace(event) {
+      event.stopPropagation(); // Prevent background click from collapsing cube
+
+      if (scene.classList.contains("expanded")) {
+        // Remove previous face's move state
+        if (lastMovedFace && lastMovedFace !== this) {
+          lastMovedFace.classList.remove("move");
+        }
+
+        // Move clicked face
+        this.classList.add("move");
+        lastMovedFace = this;
+      }
+    }
+    
+
+    // Collapse cube when clicking anywhere else
+    document.addEventListener("click", function() {
+      if (scene.classList.contains("expanded")) {
+        scene.classList.remove("expanded");
+        scene.style.animation = "rotate 5s infinite linear"; // Resume rotation
+
+        // Remove movement and event listeners
+        faces.forEach(face => {
+          face.classList.remove("move");
+          face.removeEventListener("click", moveFace);
+        });
+
+        lastMovedFace = null; // Reset reference
+      }
+    });
+  </script>
+
+</body>
+</html>

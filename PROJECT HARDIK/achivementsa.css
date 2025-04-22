@@ -1,236 +1,184 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Bebas Neue", sans-serif;
-  }
-  
-  body {
-    height: 100vh;
-    overflow: hidden;
-    background: black;
-    color: white;
-  }
-  
-  .bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-  }
-  
-  .bg-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .name {
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
-    font-size: calc(1.8vh + 1.5vw);
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    gap: 20px;                  /* Space between links */
-    padding: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;                /* Align to right side */
-    z-index: 10;
-  }
-  
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: calc(1vh + 1vw);
-    position: relative;
-    transition: color 0.3s;
-  }
-  
-  .navbar a:hover {
-    color: #08d676;
-  }
-  
-  .navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #08d676;
-    transition: 0.3s ease-in-out;
-  }
-  
-  .navbar a:hover::after {
-    width: 100%;
-  }
-  
-  
-  .header {
-    display: flex;
-    justify-content: space-between; /* logo left, navbar right */
-    align-items: center;
-    padding: 20px 40px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  .logo a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    text-decoration: none;
-  }
-  
-  .navbar{
-    display: flex;
-    position: fixed;
-    top: 2vh;
-    left: 45vw;
-    width: 50vw;
-    height: 10vh;
-    align-items: center;
-    justify-content: center;
 
+*{
+  padding:0%;
+  margin: 0%;
+  font-family: myfont;
+  /* cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; */
+  font-family: "Bebas Neue", sans-serif;
+    cursor: default;
+  }
+
+
+/* Body styles: Full screen layout with 3D perspective and black background */
+body {
+  height: 100vh;
+  display: flex;
+  perspective: 900px;
+  background-color: black;
+  overflow: hidden;
 }
 
+
+/* Positioning for the 3D model from Spline */
+#model {
+  position: absolute;
+}
+
+/* Main content container with blur animation on load */
+.content {
+  height: 100%;
+  width: 100%;
+  animation: blurEffect 2s linear;
+}
+
+/* Navigation bar styling and layout */
+.navbar {
+  display: flex;
+  position: fixed;
+  top: 2vh;
+  left: 45vw;
+  width: 50vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nav links style */
 .navbar a {
-    position: relative; 
-    text-decoration: none;
-    padding: 1.5vw;
-    font-size: calc(1vh + 1vw);
-    color: #ffffff;
+  text-decoration: none;
+  padding: 1.5vw;
+  font-size: 25px;
+  color: #ffffff;
+  animation: blureffect2 2s linear;
+  position: relative;
 }
 
+/* Underline animation on hover */
 .navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    display: block;
-    margin-top: 8px;
-    right: 0;
-    background: linear-gradient(to right, #08d676, #08d676);
-    transition: width 0.3s ease-in-out;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 8px;
+  right: 0;
+  background: linear-gradient(to right, #08d676, #08d676);
+  transition: width 0.3s ease-in-out;
 }
 
 .navbar a:hover::after {
-    width: 100%;
-    left: 0;
-    right: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
+/* Hover color change */
 .navbar a:hover {
-    color: #08d676;
+  color: #e87e61;
 }
 
-.scene {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 300px;
-  perspective: 1200px;
-  z-index: 2;
-}
-
-
-.pyramid-container {
+/* Name section styling */
+.name {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  perspective: 1000px;
-  width: 200px;
-  height: 200px;
-  z-index: 3;
-  opacity: 0;
-  animation: appear 1s ease-in-out 6s forwards;
+  color: #ffffff;
+  top: 6vh;
+  left: 8vw;
+  font-size: calc(2vh + 1.5vw);
 }
 
-@keyframes appear {
-  0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.5);
-  }
-  100% {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-.pyramid {
+/* 3D cube scene container */
+.scene {
+  top: 30%;
+  left: 48%;
   position: relative;
+  width: 8vw;
+  height: 30vh;
+  transform-style: preserve-3d;
+  animation: rotate 5s infinite linear;
+  transition: transform 1s ease;
+}
+
+/* Cube that holds the six faces */
+.cube {
+  /* cursor: pointer; */
   width: 100%;
   height: 100%;
+  position: absolute;
   transform-style: preserve-3d;
-  animation: rotate 10s infinite linear;
+  transition: transform 1s ease;
 }
 
+/* Description panel in bottom corner */
+.disc {
+  position: absolute;
+  bottom: 2vh;
+  right: 1vw;
+  font-size: calc(0.5vh + 0.4vw);
+  color: #08d676;
+  background-color: rgba(0, 0, 0);
+  padding: 10px 20px;
+  border: 1px solid #08d676;
+  border-radius: 10px;
+  max-width: 50vw;
+  z-index: 10;
+  line-height: 1.5;
+}
+
+/* Common face styles for all cube sides */
+.face {
+  /* cursor: pointer;
+  cursor: url("starter-northern-lights-pointer.png"), auto; */
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: calc(1vh + 1vw);
+  font-weight: bold;
+  color: #333;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  box-shadow: 0 0 20px #c5eb07;
+}
+
+/* Individual positioning for each cube face */
+.front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+.back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+.left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+.top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+.right  { transform: rotateY(90deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+.bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#c5eb07,#08d676); }
+
+/* Expanded cube positions when user clicks */
+.scene.expanded .front  { transform: translateX(-42vw) translateY(0); }
+.scene.expanded .back   { transform: translateX(-27vw) translateY(0); }
+.scene.expanded .left   { transform: translateX(-12vw) translateY(0); }
+.scene.expanded .right  { transform: translateX(3vw) translateY(0); }
+.scene.expanded .top    { transform: translateX(18vw) translateY(0); }
+.scene.expanded .bottom { transform: translateX(33vw) translateY(0); }
+
+/* Highlight selected face */
+.scene.expanded .move {
+  transform: scale(1.3) translateY(25vh) translateX(-4vw);
+}
+
+/* Rotation animation for the cube */
 @keyframes rotate {
-  0% {
-      transform: rotateX(0) rotateY(0);
+  from {
+      transform: rotateX(0deg) rotateY(0deg);
   }
-  100% {
+  to {
       transform: rotateX(360deg) rotateY(360deg);
   }
 }
 
-.pyramid-face {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0.8;
-}
-
-
-/* Front face - triangle */
-.pyramid-face.front {
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 173.2px solid #08d676; /* Height of the triangle */
-  transform: translateZ(57.7px) rotateX(30deg);
-}
-
-
-.pyramid-face.right {
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 173.2px solid #08d676;
-  transform: rotateY(90deg) translateZ(57.7px) rotateX(30deg);
-} 
-
-/* Back face - triangle */
-.pyramid-face.back {
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 173.2px solid #08d676;
-  transform: rotateY(180deg) translateZ(57.7px) rotateX(30deg);
-} 
-
-/* Left face - triangle */
-.pyramid-face.left {
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 173.2px solid #08d676;
-  transform: rotateY(270deg) translateZ(57.7px) rotateX(30deg);
-} 
-
-/* Bottom face - square */
-.pyramid-face.bottom {
-  width: 200px;
-  height: 200px;
-  background-color: #08d676;
-  transform: rotateX(90deg) translateZ(-100px);
+/* Fade-in animation on load */
+@keyframes blurEffect {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  100% { opacity: 1; }
 }
