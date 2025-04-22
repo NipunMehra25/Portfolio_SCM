@@ -154,12 +154,12 @@ body {
 }
 
 /* Individual positioning for each cube face */
-.front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
-.back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
-.left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
-.right  { transform: rotateY(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
-.top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
-.bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
+.front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
+.back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
+.left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
+.right  { transform: rotateY(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
+.top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
+.bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#4000ff); }
 
 /* Expanded cube positions when user clicks */
 .scene.expanded .front  { transform: translateX(-42vw) translateY(0); }
