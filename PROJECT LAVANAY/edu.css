@@ -325,3 +325,193 @@ body {
     line-height: 1.6;
     margin: 10px 0 0;
 }
+
+
+/* Large tablets and small desktops */
+@media (max-width: 1200px) {
+    .navbar {
+      left: 35%;
+      width: 60%;
+    }
+  
+    .navbar a {
+      font-size: 24px;
+      padding: 15px;
+    }
+  
+    .timeline {
+      left: -10vw;
+    }
+  
+    .back-button {
+      left: 75vw;
+    }
+  }
+  
+  /* Tablets and large phones */
+  @media (max-width: 992px) {
+    .navbar {
+      left: 25%;
+      width: 70%;
+    }
+  
+    .timeline {
+      left: 0;
+      width: 80%;
+    }
+  
+    .back-button {
+      left: 70vw;
+      top: 35vh;
+    }
+  }
+  
+  /* Medium tablets and landscape phones */
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+  
+    .navbar {
+      width: 90%;
+      left: 5%;
+      top: 0;
+      border-radius: 0;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      height: auto;
+      position: fixed;
+    }
+  
+    .navbar a {
+      font-size: 18px;
+      padding: 10px;
+    }
+  
+    .name {
+      font-size: 28px;
+      top: 80px;
+      left: 20px;
+    }
+  
+    .back-button {
+      position: fixed;
+      top: auto;
+      bottom: 30px;
+      left: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  
+    .timeline {
+      width: 90%;
+      left: 0;
+      top: 140px;
+      padding: 0;
+      margin: 0 auto;
+    }
+  
+    .timeline-item {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 50px;
+    }
+  
+    .timeline-year {
+      width: 100%;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  
+    .timeline-content {
+      border-left: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+  
+    .timeline-content::before {
+      display: none;
+    }
+  }
+  
+  /* Small phones */
+  @media (max-width: 576px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      padding: 5px 0;
+    }
+  
+    .navbar a {
+      font-size: 16px;
+      padding: 8px 5px;
+    }
+  
+    .name {
+      font-size: 24px;
+      top: 70px;
+      left: 10px;
+      width: 90%;
+      text-align: center;
+    }
+  
+    .timeline {
+      width: 95%;
+      top: 160px;
+    }
+  
+    .timeline-year {
+      font-size: 16px;
+    }
+  
+    .institution-name {
+      font-size: 14px;
+    }
+  
+    .location,
+    .description {
+      font-size: 12px;
+    }
+  
+    .back-button {
+      font-size: 14px;
+      padding: 8px 15px;
+      bottom: 15px;
+    }
+  }
+  
+  /* Extra small phones */
+  @media (max-width: 375px) {
+    .navbar a {
+      font-size: 14px;
+      padding: 6px 3px;
+    }
+  
+    .name {
+      font-size: 20px;
+    }
+  
+    .timeline {
+      top: 140px;
+    }
+  
+    .timeline-year {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .institution-name {
+      font-size: 13px;
+    }
+  
+    .location,
+    .description {
+      font-size: 11px;
+    }
+  }
+  
