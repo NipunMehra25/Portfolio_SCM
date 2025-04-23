@@ -1,159 +1,315 @@
-/* Importing custom font */
 @font-face {
-    font-family: 'myfont';
-    src: url('Warpen.otf');
+  font-family: 'myfont';
+  src: url('Warpen.otf');
 }
 
-/* Global reset and custom font + cursor */
+/* Hide cursor only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none;
+  }
+  
+  * a {
+    cursor: none;
+  }
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'myfont', sans-serif;
-    cursor: url("starter-northern-lights-cursor.png"), auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'myfont', sans-serif;
+  cursor: url("starter-northern-lights-cursor.png"), auto;
 }
 
-/* Custom pointer cursor for links */
 * a {
-    cursor: url("starter-northern-lights-pointer.png"), auto;
+  cursor: url("starter-northern-lights-pointer.png"), auto;
 }
 
-/* Body styles: Full screen layout with 3D perspective and black background */
 body {
-    height: 100vh;
-    display: flex;
-    perspective: 900px;
-    background-color: black;
-    overflow: hidden;
+  height: 100vh;
+  display: flex;
+  perspective: 900px;
+  background-color: black;
+  overflow: hidden;
 }
 
-/* Positioning for the 3D model from Spline */
 #model {
-    position: absolute;
+  position: absolute;
 }
 
-/* Main content container with blur animation on load */
 .content {
-    height: 100%;
-    width: 100%;
-    animation: blurEffect 2s linear;
+  height: 100%;
+  width: 100%;
+  animation: blurEffect 2s linear;
 }
 
-/* Navigation bar styling and layout */
+/* Custom cursor styling */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease;
+  display: none;
+}
+
 .navbar {
-    display: flex;
-    position: fixed;
-    top: 2vh;
-    left: 45vw;
-    width: 50vw;
-    height: 10vh;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  position: fixed;
+  top: 2vh;
+  left: 45vw;
+  width: 50vw;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Nav links style */
 .navbar a {
-    text-decoration: none;
-    padding: 1.5vw;
-    font-size: calc(.8vh + .6vw);
-    color: #ffffff;
-    animation: blureffect2 2s linear;
-    position: relative;
+  text-decoration: none;
+  padding: 1.5vw;
+  font-size: calc(.8vh + .6vw);
+  color: #ffffff;
+  animation: blureffect2 2s linear;
+  position: relative;
 }
 
-/* Underline animation on hover */
-.navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    display: block;
-    margin-top: 8px;
-    right: 0;
-    background: linear-gradient(to right, #00b3ff, #00b3ff);
-    transition: width 0.3s ease-in-out;
+
+/* Magnetic button style */
+.magnetic-link {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  z-index: 1;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Magnetic hover background effect */
+.magnetic-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 12px;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: -1;
+}
+
+
+
+/* Hover style for magnetic link */
+.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: #00b3ff;
+}
+
+/* Override for navbar magnetic link */
+.navbar .nohover.magnetic-link:hover {
+  transform: scale(1);
+  opacity: 1;
+  background: white;
+}
+
 
 .navbar a:hover::after {
-    width: 100%;
-    left: 0;
-    right: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
-/* Hover color change */
 .navbar a:hover {
-    color: #00b3ff;
+  color: #ffffff;
 }
 
-/* Name section styling */
 .name {
-    position: absolute;
-    color: #ffffff;
-    top: 6vh;
-    left: 8vw;
-    font-size: calc(2vh + 1.5vw);
+  position: absolute;
+  color: #ffffff;
+  top: 6vh;
+  left: 8vw;
+  font-size: calc(2vh + 1.5vw);
 }
 
-/* 3D cube scene container */
 .scene {
-    top: 30%;
-    left: 48%;
-    position: relative;
-    width: 8vw;
-    height: 30vh;
-    transform-style: preserve-3d;
-    animation: rotate 5s infinite linear;
-    transition: transform 1s ease;
+  top: 30%;
+  left: 48%;
+  position: relative;
+  width: 8vw;
+  height: 30vh;
+  transform-style: preserve-3d;
+  animation: rotate 5s infinite linear;
+  transition: transform 1s ease;
 }
 
-/* Cube that holds the six faces */
 .cube {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transition: transform 1s ease;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
-/* Description panel in bottom corner */
 .disc {
-    position: absolute;
-    bottom: 2vh;
-    right: 1vw;
-    font-size: calc(0.5vh + 0.4vw);
-    color: #00b3ff;
-    background-color: rgba(0, 0, 0);
-    padding: 10px 20px;
-    border: 1px solid #00b3ff;
-    border-radius: 10px;
-    max-width: 50vw;
-    z-index: 10;
-    line-height: 1.5;
+  
+  position: absolute;
+  bottom: 2vh;
+  right: 1vw;
+  font-size: calc(0.5vh + 0.4vw);
+  color: #00b3ff;
+  background-color: rgba(0, 0, 0);
+  padding: 10px 20px;
+  border: 1px solid #00b3ff;
+  border-radius: 10px;
+  max-width: 50vw;
+  z-index: 10;
+  line-height: 1.5;
 }
 
-/* Common face styles for all cube sides */
 .face {
-    cursor: pointer;
-    cursor: url("starter-northern-lights-pointer.png"), auto;
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 3px solid #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: calc(1vh + 1vw);
-    font-weight: bold;
-    color: #333;
-    border-radius: 10px;
-    transition: transform 1s ease;
-    box-shadow: 0 0 20px #00b3ff;
+  cursor: pointer;
+  cursor: url("starter-northern-lights-pointer.png"), auto;
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px solid #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: calc(1vh + 1vw);
+  font-weight: bold;
+  color: #333;
+  border-radius: 10px;
+  transition: transform 1s ease;
+  box-shadow: 0 0 20px #00b3ff;
+  overflow: hidden;
 }
 
-/* Individual positioning for each cube face */
+/* Update transition properties to include all changing properties */
+.face {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 1s ease;
+}
+
+/* When hovering over the rotating cube, change all faces */
+.scene:not(.expanded):hover .face {
+  background: white !important; /* Override the gradient */
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 0 0 20px #ffffff !important;
+}
+
+/* When expanded and hovering over individual face, change only that face */
+.scene.expanded .face:hover {
+  background: white !important; /* Override the gradient */
+  color: #000000 !important;
+  border-color: #000000 !important;
+  box-shadow: 0 0 20px #ffffff !important;
+}
+
+/* Make sure the title text changes color too */
+.scene:not(.expanded):hover .face .title,
+.scene.expanded .face:hover .title {
+  color: #000000 !important;
+  
+}
+
+/* Ensure the description text changes color on hover too */
+.scene:not(.expanded):hover .face .description,
+.scene.expanded .face:hover .description {
+  color: #000000 !important;
+  background-color: #ffffff;
+}
+
+
+
+
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.title {
+  text-align: center;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+
+.bg-video{
+  display:none ;
+}
+
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  font-size: calc(0.7vh + 0.7vw);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: linear-gradient(#00b3ff,#00fff7);
+  z-index: 1;
+}
+
+.show-description .title {
+  opacity: 0;
+  z-index: 1;
+}
+
+.show-description .description {
+  opacity: 1;
+  z-index: 2;
+}
+
 .front  { transform: rotateY(  0deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
 .back   { transform: rotateY(180deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
 .left   { transform: rotateY(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
@@ -161,7 +317,7 @@ body {
 .top    { transform: rotateX(90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
 .bottom { transform: rotateX(-90deg) translateZ(85px); background: linear-gradient(#00b3ff,#00fff7); }
 
-/* Expanded cube positions when user clicks */
+/* Expanded face positioning */
 .scene.expanded .front  { transform: translateX(-42vw) translateY(0); }
 .scene.expanded .back   { transform: translateX(-27vw) translateY(0); }
 .scene.expanded .left   { transform: translateX(-12vw) translateY(0); }
@@ -169,24 +325,349 @@ body {
 .scene.expanded .top    { transform: translateX(18vw) translateY(0); }
 .scene.expanded .bottom { transform: translateX(33vw) translateY(0); }
 
-/* Highlight selected face */
 .scene.expanded .move {
-    transform: scale(1.3) translateY(25vh) translateX(-4vw);
+  transform: scale(1.3) translateY(28vh) translateX(-4vw);
 }
 
-/* Rotation animation for the cube */
+/* Magnetic button style */
+.magnetic-link {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Animations */
 @keyframes rotate {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
 }
 
-/* Fade-in animation on load */
 @keyframes blurEffect {
-    0% { opacity: 0; }
-    25% { opacity: 0; }
-    100% { opacity: 1; }
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: url("starter-northern-lights-pointer.png"), auto;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #00b3ff;
+  transition: all 0.3s ease;
+}
+
+/* Enable scrolling on small screens */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  body {
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .scene {
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30vw;
+    height: 30vh;
+  }
+  
+  .scene.expanded {
+    top: 20%;
+  }
+  
+  /* Adjust expanded card positions for mobile */
+  .scene.expanded .front  { transform: translateX(-80vw) translateY(30vh); }
+  .scene.expanded .back   { transform: translateX(-40vw) translateY(30vh); }
+  .scene.expanded .left   { transform: translateX(0vw) translateY(30vh); }
+  .scene.expanded .right  { transform: translateX(-80vw) translateY(60vh); }
+  .scene.expanded .top    { transform: translateX(-40vw) translateY(60vh); }
+  .scene.expanded .bottom { transform: translateX(0vw) translateY(60vh); }
+  
+  .scene.expanded .move {
+    transform: scale(1.2) translateY(-10vh) translateX(0);
+  }
+  
+  .disc {
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  .bg-video {
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden;
+  }
+
+.bg-video video {
+    display: block;
+    position: absolute;
+    width: 100vw; 
+    height: 110vh; 
+    object-fit: cover; 
+    z-index: -1;
+  }
+}
+
+/* Mobile navbar slide-in */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: right 0.3s ease-in-out;
+    z-index: 99;
+    left: auto;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+
+  .navbar a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .bg-video {
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-video video {
+    display: block;
+    position: absolute;
+    width: 100vw; 
+    height: 110vh; 
+    object-fit: cover; 
+    z-index: -1;
+}
+}
+
+/* Mobile name position */
+@media (max-width: 768px) {
+  .name {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+/* Adjust face size for mobile */
+@media (max-width: 768px) {
+  .face {
+    width: 140px;
+    height: 140px;
+    font-size: 16px;
+  }
+  
+  .description {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Keep existing media queries and add these improved ones for the smallest screens */
+@media (max-width: 480px) {
+  /* Basic setup */
+  .scene {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translateX(-50%);
+    width: 140px;  /* Match the face size */
+    height: 140px; /* Match the face size */
+    perspective: 1000px;
+  }
+  
+  .cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+  
+  /* Ensure faces are exactly the same size and properly aligned */
+  .face {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+  
+  /* Precise face positioning to prevent gaps */
+  .front  { transform: rotateY(0deg) translateZ(70px); }
+  .back   { transform: rotateY(180deg) translateZ(70px); }
+  .left   { transform: rotateY(-90deg) translateZ(70px); }
+  .right  { transform: rotateY(90deg) translateZ(70px); }
+  .top    { transform: rotateX(90deg) translateZ(70px); }
+  .bottom { transform: rotateX(-90deg) translateZ(70px); }
+  
+  /* Make description text more readable on small screens */
+  .description {
+    font-size: 12px;
+    padding: 8px;
+    line-height: 1.3;
+  }
+  
+  /* Improve expanded layout positioning */
+  .scene.expanded {
+    top: 15%;
+    height: 0vh;
+    perspective: none;
+  }
+  
+  .scene.expanded .cube {
+    transform: none;
+    height: 100%;
+  }
+  
+  /* Vertically stack cards in expanded view for small screens */
+  .scene.expanded .front  { transform: translateX(0) translateY(0vh); }
+  .scene.expanded .back   { transform: translateX(0) translateY(18vh); }
+  .scene.expanded .left   { transform: translateX(40vw) translateY(0vh); }
+  .scene.expanded .right  { transform: translateX(40vw) translateY(18vh); }
+  .scene.expanded .top    { transform: translateX(0) translateY(36vh); }
+  .scene.expanded .bottom { transform: translateX(40vw) translateY(36vh); }
+  
+  /* Fix the disc position for mobile */
+  .disc {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+    font-size: 14px;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  
+  /* Ensure body has enough height to scroll through all cards */
+  body {
+    min-height: 90vh;
+  }
+  .bg-video {
+    display: block;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-video video {
+    display: block;
+    position: absolute;
+    width: 100vw; 
+    height: 110vh; 
+    object-fit: cover; 
+    z-index: -1;
+}
+}
+
+/* For very small phones, adjust further */
+@media (max-width: 360px) {
+  .face {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .front, .back, .left, .right, .top, .bottom {
+    transform-origin: center;
+  }
+  
+  .front  { transform: rotateY(0deg) translateZ(60px); }
+  .back   { transform: rotateY(180deg) translateZ(60px); }
+  .left   { transform: rotateY(-90deg) translateZ(60px); }
+  .right  { transform: rotateY(90deg) translateZ(60px); }
+  .top    { transform: rotateX(90deg) translateZ(60px); }
+  .bottom { transform: rotateX(-90deg) translateZ(60px); }
+  
+  .scene {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+  
+  .description {
+    font-size: 11px;
+    padding: 5px;
+  }
+}
+
+/* Hide spline on mobile */
+@media (max-width: 768px) {
+  #model {
+      display: none;
+  }
+}
+
+/* Remove system cursor on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Touch device adjustments */
+body.touch-device .cursor-dot,
+body.touch-device .cursor-trail {
+  display: none !important;
 }
