@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing my work, skills, and experience">
+    <title>Portfolio | Your Name</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom cursor elements -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
+    
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#home">NM</a>
+                </div>
+
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <a href="../Open First/portfolio2.html" class="back-btn" style="margin-left: 10px;">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                    <li><a href="#home" class="nav-link" class="magnetic-link">Home</a></li>
+                    <li><a href="#about" class="nav-link" class="magnetic-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link" class="magnetic-link">Portfolio</a></li>
+                    <li><a href="#skills" class="nav-link" class="magnetic-link">Skills</a></li>
+                    <li><a href="#contact" class="nav-link" class="magnetic-link">Contact</a></li>
+                </ul>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="fade-in">Hello, I'm <span class="highlight">Nipun Mehra</span></h1>
+                    <h2 class="fade-in delay-1">Frontend Developer & Backend Dev</h2>
+                    <p class="fade-in delay-2">I create elegant, functional, and user-centered digital experiences</p>
+                    <div class="hero-buttons fade-in delay-3">
+                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <p>Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div class="image-container">
+                            <img src="Screenshot 2025-04-05 223516.png" class="Profile" alt="Profile Photo">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Who I Am</h3>
+                        <p>I'm a passionate frontend developer and UX designer with a keen eye for detail and a commitment to creating intuitive, engaging user experiences. With a background in both design and development, I bridge the gap between aesthetics and functionality.</p>
+                        
+                        <h3>What I Do</h3>
+                        <p>I specialize in building responsive, accessible websites and applications that not only look great but perform exceptionally. My approach combines clean code, thoughtful design, and user-centered thinking.</p>
+                        
+                        <h3>When I'm Not Coding</h3>
+                        <p>Outside of work, I enjoy hiking, playing sports, and experimenting with new cooking recipes. I believe that diverse experiences fuel creativity and problem-solving in my professional work.</p>
+                        
+                        <div class="about-buttons">
+                            <a href="#portfolio" class="btn btn-primary">See My Work</a>
+                            <a href="CV_Nipun.pdf" class="btn btn-secondary" download>Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">My Portfolio</h2>
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="app">App Development</button>
+                    <button class="filter-btn" data-filter="ui">UI/UX Design</button>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- Project 1 -->
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-img">
+                            <img src="Screenshot 2025-04-13 175744.png" alt="Project 1">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>E-Commerce Website</h3>
+                                    <p>Web Design / Development</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>E-Commerce Website</h3>
+                            <p>A fully responsive e-commerce platform with product filtering, cart functionality, and secure checkout.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="portfolio-item" data-category="app">
+                        <div class="portfolio-img">
+                            <img src="Screenshot 2025-04-13 180130.png" alt="Project 2">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Task Management App</h3>
+                                    <p>App Development</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>Task Management App</h3>
+                            <p>A productivity application with task organization, reminders, and progress tracking features.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="portfolio-item" data-category="ui">
+                        <div class="portfolio-img">
+                            <img src="image.png" alt="Project 3">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Cyrus AI</h3>
+                                    <p>API / Backend</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>Cyrus AI</h3>
+                            <p>Cyurs AI is a Python-based assistant inspired by J.A.R.V.I.S., built to handle voice commands, automation, and smart tasks.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>Python</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-img">
+                            <img src="restsurant.jpg" alt="Project 4">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Restaurant Website</h3>
+                                    <p>Web Design</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>Restaurant Website</h3>
+                            <p>A visually appealing website for a restaurant featuring menu, reservations, and location information.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="portfolio-item" data-category="ui">
+                        <div class="portfolio-img">
+                            <img src="original-0d5162db71062a79d4830dae931b9c45.png" alt="Project 5">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Travel App UI Kit</h3>
+                                    <p>UI/UX Design</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>Travel App UI Kit</h3>
+                            <p>A comprehensive UI kit for travel applications with booking, itinerary, and discovery screens.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="portfolio-item" data-category="app">
+                        <div class="portfolio-img">
+                            <img src="original-561bb4633b774eea3e57e67dd4581a3b.png" alt="Project 6">
+                            <div class="portfolio-overlay">
+                                <div class="portfolio-info">
+                                    <h3>Weather Application</h3>
+                                    <p>App Development</p>
+                                    <div class="portfolio-links">
+                                        <a href="#" class="portfolio-link"><i class="fas fa-link"></i></a>
+                                        <a href="#" class="portfolio-link"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3>Weather Application</h3>
+                            <p>A weather forecast application with location detection, hourly and weekly forecasts, and weather alerts.</p>
+                            <div class="portfolio-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-content">
+                    <div class="skills-text">
+                        <p>I've developed expertise in a range of technologies and tools that enable me to create comprehensive digital solutions. My technical skills are complemented by soft skills like problem-solving, communication, and attention to detail.</p>
+                    </div>
+                    <div class="skills-categories">
+                        <div class="skills-category">
+                            <h3>Frontend Development</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>HTML5</span>
+                                        <span>80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>CSS3</span>
+                                        <span>70%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>JavaScript</span>
+                                        <span>65%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Responsive Design</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h3>Other's</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Python</span>
+                                        <span>90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>C/C++ </span>
+                                        <span>75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Photoshop</span>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 66%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info">
+                                        <span>Spline</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h3>Other Skills</h3>
+                            <div class="skills-grid">
+                                <div class="skill-card">
+                                    <i class="fas fa-code"></i>
+                                    <span>Version Control (Git)</span>
+                                </div>
+                                <div class="skill-card">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Responsive Design</span>
+                                </div>
+                                <div class="skill-card">
+                                    <i class="fas fa-universal-access"></i>
+                                    <span>Web Accessibility</span>
+                                </div>
+                                <div class="skill-card">
+                                    <i class="fas fa-search"></i>
+                                    <span>SEO Principles</span>
+                                </div>
+                                <div class="skill-card">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                    <span>Performance Optimization</span>
+                                </div>
+                                <div class="skill-card">
+                                    <i class="fas fa-users"></i>
+                                    <span>User Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume">
+            <div class="container">
+                <h2 class="section-title">My Resume</h2>
+                <div class="resume-content">
+                    <p>View my complete work history, education, and qualifications in my resume.</p>
+                    <a href="CV_Nipun.pdf" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                            <p>nipun0474.becse24@chitakara.edu.in</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Location</h3>
+                            <p>Chandigarh, India</p>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone</h3>
+                            <p>+91 7973696918</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/nipun-mehra-4864a5308/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/NipunMehra25" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <!-- <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>  -->
+                        </div>
+                        <div class="calendly-info">
+                            <h3>Schedule a Meeting</h3>
+                            <p>Book a time slot directly in my calendar.</p>
+                            <a href="#" class="btn btn-secondary">Open Calendar</a>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">NM</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/nipun-mehra-4864a5308/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/NipunMehra25" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Nipun Mehra. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script>
+        // Detect touch device
+        const isTouchDevice = () => {
+          return (('ontouchstart' in window) ||
+              (navigator.maxTouchPoints > 0) ||
+              (navigator.msMaxTouchPoints > 0));
+        };
+    
+        // Add class to body if touch device
+        if (isTouchDevice()) {
+          document.body.classList.add('touch-device');
+        } else {
+          // Only enable custom cursor on non-touch devices
+          const dot = document.querySelector('.cursor-dot');
+          const trail = document.querySelector('.cursor-trail');
+          
+          if (dot && trail) {
+            // Show cursor elements
+            dot.style.display = 'block';
+            trail.style.display = 'block';
+            
+            let mouseX = 0, mouseY = 0;
+            let trailX = 0, trailY = 0;
+            
+            // Set initial positions
+            dot.style.left = '50%';
+            dot.style.top = '50%';
+            trail.style.left = '50%';
+            trail.style.top = '50%';
+            
+            // Update cursor position on mouse move
+            document.addEventListener('mousemove', (e) => {
+              mouseX = e.clientX;
+              mouseY = e.clientY;
+              
+              // Update dot immediately
+              dot.style.left = mouseX + 'px';
+              dot.style.top = mouseY + 'px';
+            });
+            
+            // Animate the trail with requestAnimationFrame for smooth performance
+            function animateTrail() {
+              // Calculate the distance between mouse and trail
+              const dx = mouseX - trailX;
+              const dy = mouseY - trailY;
+              
+              // Easing - move trail toward mouse position
+              trailX += dx * 0.7;
+              trailY += dy * 0.7;
+              
+              const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+              const stretch = Math.min(Math.sqrt(dx * dx + dy * dy) / 30, 0.5);
+    
+              trail.style.left = `${trailX}px`;
+              trail.style.top = `${trailY}px`;
+              trail.style.transform = `translate(-50%, -50%) rotate(${angle}deg) scale(${1 + stretch}, ${1 - stretch * 0.4})`;
+              
+              // Continue animation
+              requestAnimationFrame(animateTrail);
+            }
+            
+            // Start animation
+            animateTrail();
+            
+            // Make cursor bigger on hover over links and buttons
+            const hoverElements = document.querySelectorAll('a, button, .face');
+            hoverElements.forEach(el => {
+              el.addEventListener('mouseenter', () => {
+                trail.style.width = '60px';
+                trail.style.height = '60px';
+                trail.style.background = 'rgba(0, 179, 255, 0.4)';
+              });
+              
+              el.addEventListener('mouseleave', () => {
+                trail.style.width = '40px';
+                trail.style.height = '40px';
+                trail.style.background = 'white';
+              });
+            });
+            
+            // Hide trail when hovering over links
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+              link.addEventListener('mouseenter', () => {
+                trail.style.opacity = '0';
+              });
+    
+              link.addEventListener('mouseleave', () => {
+                trail.style.opacity = '1';
+              });
+            });
+            
+            // Magnetic effect on navbar links
+            const magneticLinks = document.querySelectorAll('.magnetic-link');
+            magneticLinks.forEach(link => {
+              link.addEventListener('mousemove', (e) => {
+                const rect = link.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                link.style.transform = `translate(${x * 0.6}px, ${y * 0.6}px) scale(1.05)`;
+              });
+    
+              link.addEventListener('mouseleave', () => {
+                link.style.transform = `translate(0, 0) scale(1)`;
+              });
+            });
+          }
+        }
+    
+        const scene = document.getElementById("scene");
+        const cube = document.getElementById("cube");
+        const faces = document.querySelectorAll(".face");
+        let lastMovedFace = null;
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+        const navbar = document.getElementById("navbar");
+        
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener("click", function() {
+            navbar.classList.toggle("active");
+            
+            // Animate hamburger to X
+            const spans = this.querySelectorAll("span");
+            if (navbar.classList.contains("active")) {
+              spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+              spans[1].style.opacity = "0";
+              spans[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
+            } else {
+              spans[0].style.transform = "none";
+              spans[1].style.opacity = "1";
+              spans[2].style.transform = "none";
+            }
+          });
+        }
+    
+        cube.addEventListener("click", function(event) {
+          event.stopPropagation();
+          if (!scene.classList.contains("expanded")) {
+            scene.classList.add("expanded");
+            scene.style.animation = "none"; // Stop rotation animation on .scene
+            faces.forEach(face => {
+              face.classList.remove("move");
+              face.classList.remove("show-description");
+              face.addEventListener("click", moveFace);
+            });
+          }
+        });
+    
+        function moveFace(event) {
+          event.stopPropagation();
+          if (scene.classList.contains("expanded")) {
+            const clickedFace = this;
+            
+            // If clicking on the already moved face, do nothing (since description is already showing)
+            if (lastMovedFace === clickedFace) {
+              return;
+            } else {
+              // If there was a previously moved face, reset it
+              if (lastMovedFace) {
+                lastMovedFace.classList.remove("move");
+                lastMovedFace.classList.remove("show-description");
+              }
+              
+              // Move the clicked face, show its description, and make it the new lastMovedFace
+              clickedFace.classList.add("move");
+              clickedFace.classList.add("show-description"); // Add this line to show description automatically
+              lastMovedFace = clickedFace;
+            }
+          }
+        }
+        
+        document.addEventListener("click", function(event) {
+          // Don't close if clicking on navbar or mobile menu
+          if (navbar.contains(event.target) || 
+              (mobileMenuBtn && mobileMenuBtn.contains(event.target))) {
+            return;
+          }
+          
+          if (scene.classList.contains("expanded")) {
+            scene.classList.remove("expanded");
+            scene.style.animation = "rotate 5s infinite linear"; 
+            faces.forEach(face => {
+              face.classList.remove("move");
+              face.classList.remove("show-description");
+              face.removeEventListener("click", moveFace);
+            });
+            lastMovedFace = null;
+          }
+        });
+      </script>
+    </body>
+</html>
