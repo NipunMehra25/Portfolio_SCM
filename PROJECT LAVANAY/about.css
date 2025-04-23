@@ -143,8 +143,8 @@ cursor:none;
     /* Smooth background transition */
     /* animation: bounce 1s infinite; Animation */
     position: relative;
-    top: 82vh;
-    left: 85vw;
+    top: 84vh;
+    right: -44vw;
     font-family: fonts;
 }
 
@@ -373,37 +373,6 @@ video {
   }
   
   
-  @media (max-width: 1200px) {
-    .skills-section {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .skills-section {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-    .skills-options {
-      flex-direction: column; /* Stack buttons on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .skills-section {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-    .skills-options {
-      gap: 20px; /* Add more spacing between buttons */
-    }
-    .skills-display img {
-      width: 50px; /* Smaller icons for small screens */
-      height: 50px;
-    }
-  }
-  
   
   .skills-options {
     display: flex;
@@ -564,239 +533,362 @@ video {
     color: #ccc;
     line-height: 1.8;
   }
-  
-  @media (min-width: 1200px) {
-    .skills-section {
-      margin-left: 20px;
-      margin-right: 20px;
-    }
-  
-    .about-box {
-      width: 75%;
-    }
-  
-    .diagram-title {
-      font-size: 4rem;
-    }
-  }
 
-  @media (max-width: 1200px) and (min-width: 768px) {
-    .skills-options {
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
   
-    .skill-button {
-      padding: 10px 20px;
-      font-size: 1rem;
-    }
-  
-    .about-box {
-      width: 90%;
-      margin: 20px auto;
-    }
-  
-    .diagram-title {
-      font-size: 3rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      position: fixed;
-      top: 0;
-    }
-  
-    .skills-options {
-      flex-direction: column; /* Stack buttons vertically */
-      gap: 15px;
-    }
-  
-    .skills-display img {
-      width: 45px;
-      height: 45px;
-    }
-  
-    .about-box {
-      width: 95%;
-      padding: 1rem;
-    }
-  
-    .diagram-title {
-      font-size: 2.5rem;
-    }
-  
-    .skill-button {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-  
-    body {
-      padding-top: 80px; /* Account for fixed navbar height */
-    }
-  }
-
-  @media (max-width: 480px) {
-    .navbar {
-      flex-direction: column;
-      gap: 10px; /* Add spacing between navbar links */
-    }
-  
-    .skills-section {
-      margin: 5px;
-      text-align: center;
-    }
-  
-    .skills-options {
-      gap: 10px; /* Reduce spacing between buttons */
-    }
-  
-    .skill-button {
-      padding: 6px 12px;
-      font-size: 0.8rem;
-    }
-  
-    .skills-display img {
-      width: 35px; /* Smaller icons for small screens */
-      height: 35px;
-    }
-  
-    .about-box {
-      padding: 0.8rem;
-      font-size: 0.9rem;
-    }
-  
-    .diagram-title {
-      font-size: 2rem;
-    }
-  }
-  
-  @media screen and (orientation: portrait) {
-    .skills-section {
-      margin: 0 auto;
-      text-align: center;
-    }
-  
-    .skills-options {
-      flex-direction: column;
-      gap: 10px; /* Reduce spacing for portrait view */
-    }
-  
-    .skills-display img {
-      width: 30px;
-      height: 30px;
-    }
-  
-    .about-box {
-      text-align: center;
-      width: 90%;
-      padding: 0.5rem;
-    }
-  
-    .diagram-title {
-      font-size: 1.8rem;
-      line-height: 1.2;
-    }
-  }
+/* Extra large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
   .navbar {
-    display: flex;
-    position: fixed;
-    top: 4%;
-    left: 45%;
-    width: 50%;
-    height: 10%;
-    align-items: center;
-    justify-content: center;
-    font-family: fonts;
-    background: black;
-    border-radius: 17px;
-    border-bottom: 4px solid #ffffff33;
-    z-index: 999;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 50%;
+      left: 45%;
+  }
+  
+  .skills-section {
+      width: 70vw;
+      max-width: 800px;
+  }
+  
+  .about-box {
+      width: 75%;
+      max-width: 1000px;
+  }
+}
+
+/* Large screens (desktops, between 992px and 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar {
+      width: 60%;
+      left: 35%;
   }
   
   .navbar a {
-    position: relative;
-    text-decoration: none;
-    padding: 20px;
-    font-size: 30px;
-    color: #ffffff;
-    transition: all 0.3s ease;
-  }
-  
-
-  
-  .navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    display: block;
-    margin-top: 8px;
-    right: 0;
-    background: linear-gradient(90deg, rgba(111, 30, 224, 1) 11%, rgba(155, 124, 181, 1) 94%);
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .navbar a:hover::after {
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Media Queries */
-  
-  /* For tablets */
-  @media (max-width: 1200px) {
-    .navbar {
-      width: 70%;
-      left: 15%;
-      height: auto;
-    }
-  
-    .navbar a {
+      font-size: 26px;
       padding: 15px;
-      font-size: 24px;
-    }
   }
   
-  /* For small screens */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      top: 5%;
-      left: 0;
-      width: 100%;
-      height: auto;
-      padding: 10px 0;
-    }
+  .name {
+      font-size: 36px;
+  }
   
-    .navbar a {
-      display: block;
-      font-size: 20px;
-      padding: 10px 0;
+  .skills-section {
+      width: 80vw;
+  }
+  
+  .about-box {
+      width: 80%;
+  }
+}
+
+/* Medium screens (tablets, between 768px and 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar {
+      width: 80%;
+      left: 10%;
+  }
+  
+  .navbar a {
+      font-size: 22px;
+      padding: 12px;
+  }
+  
+  .name {
+      font-size: 32px;
+      top: 30px;
+      left: 40px;
+  }
+  
+  .back-button {
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+  
+  .back-button-container {
+      bottom: 30px;
+      right: 30px;
+  }
+  
+  .about-container {
+      margin-top: 100px;
+  }
+  
+  .about-box {
+      width: 85%;
+      padding: 1.5rem;
+  }
+  
+  .about-title {
+      font-size: 2.5rem;
+  }
+  
+  .about-text {
+      font-size: 1.2rem;
+  }
+  
+  .skills-section {
+      width: 85vw;
+      padding: 25px;
+      margin: 30px auto;
+  }
+  
+  .skills-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+  }
+  
+  .skill-button {
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+  
+  .skills-display img {
+      width: 50px;
+      height: 50px;
+  }
+}
+
+/* Small screens (landscape phones, between 576px and 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  body {
+      flex-direction: column;
+      padding-top: 80px;
+  }
+  
+  .navbar {
+      width: 90%;
+      left: 5%;
+      top: 80px;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .navbar a {
+      font-size: 18px;
+      padding: 10px;
+  }
+  
+  .name {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 28px;
+      width: 100%;
       text-align: center;
-      width: 100%;
-    }
   }
   
-  /* For extra small screens */
-  @media (max-width: 480px) {
-    .navbar {
-      flex-direction: column;
-      width: 100%;
-      height: auto;
-      padding: 5px 0;
-    }
-  
-    .navbar a {
+  .back-button {
       font-size: 16px;
-      padding: 8px 0;
-    }
+      padding: 8px 16px;
   }
   
+  .back-button-container {
+      bottom: 20px;
+      right: 20px;
+  }
+  
+  .about-container {
+      margin-top: 180px;
+  }
+  
+  .about-box {
+      width: 90%;
+      padding: 1.2rem;
+  }
+  
+  .about-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+  }
+  
+  .about-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+  }
+  
+  .skills-section {
+      width: 90vw;
+      padding: 20px;
+      margin: 30px auto;
+  }
+  
+  .skills-title {
+      font-size: 26px;
+      margin-bottom: 20px;
+  }
+  
+  .skills-options {
+      gap: 15px;
+  }
+  
+  .skill-button {
+      padding: 8px 16px;
+      font-size: 12px;
+  }
+  
+  .skills-display {
+      gap: 30px;
+  }
+  
+  .skills-display img {
+      width: 45px;
+      height: 45px;
+  }
+}
+
+/* Extra small screens (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  body {
+      flex-direction: column;
+      padding-top: 70px;
+  }
+  
+  .navbar {
+      width: 100%;
+      left: 0;
+      top: 70px;
+      border-radius: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 5px 0;
+  }
+  
+  .navbar a {
+      font-size: 16px;
+      padding: 8px 5px;
+  }
+  
+  .name {
+      position: fixed;
+      top: 15px;
+      left: 0;
+      font-size: 24px;
+      width: 100%;
+      text-align: center;
+  }
+  
+  .back-button {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+  
+  .back-button-container {
+      bottom: 15px;
+      right: 15px;
+  }
+  
+  .about-container {
+      margin-top: 160px;
+  }
+  
+  .about-box {
+      width: 92%;
+      padding: 1rem;
+  }
+  
+  .about-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+  }
+  
+  .about-text {
+      font-size: 1rem;
+      line-height: 1.5;
+  }
+  
+  .skills-section {
+      width: 92vw;
+      padding: 15px;
+      margin: 25px auto;
+  }
+  
+  .skills-title {
+      font-size: 22px;
+      margin-bottom: 15px;
+  }
+  
+  .skills-options {
+      flex-direction: column;
+      gap: 10px;
+  }
+  
+  .skill-button {
+      padding: 8px 12px;
+      font-size: 12px;
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .skills-display {
+      gap: 20px;
+  }
+  
+  .skills-display img {
+      width: 40px;
+      height: 40px;
+  }
+  
+  /* Hide custom cursor on mobile */
+  .cursor-dot, .cursor-trail {
+      display: none;
+  }
+  
+  * {
+      cursor: auto !important;
+  }
+}
+
+/* For devices with hover capability */
+@media (hover: hover) {
+  .cursor-dot, .cursor-trail {
+      display: block;
+  }
+  
+  * {
+      cursor: none !important;
+  }
+}
+
+/* For devices without hover capability (touch screens) */
+@media (hover: none) {
+  .cursor-dot, .cursor-trail {
+      display: none;
+  }
+  
+  * {
+      cursor: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;     /* Center align the column items */
+    justify-content: space-around; /* Even spacing */
+    padding: 10px 0;
+    height: auto;            /* Allow height to grow with content */
+  }
+
+  .navbar a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar a:first-child {
+    border-top: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .skills-section {
+      width: 72vw;
+      padding: 10px;
+      margin: -65px auto;
+      height: auto;}
+    }
+
+    @media (max-width: 575px) {
+      .about-box {
+          width: 92%;
+          padding: 0.5rem;
+      }
+  }
