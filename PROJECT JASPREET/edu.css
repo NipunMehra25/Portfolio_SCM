@@ -13,6 +13,7 @@
     position: absolute;
     top: 0vh;
     right: -25vw;
+
 }
 
 * a{
@@ -146,7 +147,7 @@ body {
     font-weight: bold;
     text-align: center;
     color: #000000;
-    background: linear-gradient(#00b3ff, #00fff7);
+    background: linear-gradient(#00b3ff, #4000ff);
     padding: 1vh;
     border-radius: 5px;
 }
