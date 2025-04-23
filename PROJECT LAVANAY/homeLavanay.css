@@ -379,17 +379,17 @@ video {
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-  .photo:hover {
-    transform: scale(1.05) rotate(1.5deg);
-    box-shadow: 0 15px 45px rgba(111, 30, 224, 0.5);
-    filter:grayscale(0);
-    backdrop-filter: none;
-   box-shadow: 20px 18px 10px rgba(111, 30, 224, 0.3), 17px 20px 5px 0 rgba(255, 255, 255, 0.1) inset;;
-  }
+
+.photo:hover {
+transform: scale(1.05) rotate(1.5deg);
+box-shadow: 0 15px 45px rgba(111, 30, 224, 0.5);
+filter:grayscale(0);
+backdrop-filter: none;
+box-shadow: 20px 18px 10px rgba(111, 30, 224, 0.3), 17px 20px 5px 0 rgba(255, 255, 255, 0.1) inset;;
+}
   
-  .photo:hover img {
-    transform: scale(1.01);
-    
-  }
+.photo:hover img {
+transform: scale(1.01);
+    }
   
   
