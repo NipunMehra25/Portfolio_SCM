@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Bebas Neue", sans-serif;
-    cursor: url("starter-northern-lights-cursor.png"),auto;
+    cursor: url("starter-northern-lights-cursor.png"), auto;
 }
 
-* a{
-    cursor: url("starter-northern-lights-pointer.png"),auto;
+* a {
+    cursor: url("starter-northern-lights-pointer.png"), auto;
 }
-
+ 
 .video-background {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; 
-    height: 100vh; 
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
     overflow: hidden;
 }
@@ -23,30 +23,30 @@
 video {
     position: absolute;
     top: 0%;
-    width: 100vw; 
-    height: 100vh; 
-    object-fit: cover; }
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
 
 @keyframes blurEffect {
-    
-    0%{
+    0% {
         opacity: 0;
     }
-    25%{
+    25% {
         opacity: 0;
     }
-    100%{
+    100% {
         opacity: 1;
     }
 }
 
-.content{
+.content {
     height: 100%;
     width: 100%;
     animation: blurEffect 2s linear;
 }
 
-.navbar{
+.navbar {
     display: flex;
     position: fixed;
     top: 2vh;
@@ -55,11 +55,10 @@ video {
     height: 10vh;
     align-items: center;
     justify-content: center;
-
 }
 
 .navbar a {
-    position: relative; 
+    position: relative;
     text-decoration: none;
     padding: 1.5vw;
     font-size: calc(1vh + 1vw);
@@ -88,7 +87,7 @@ video {
     color: #e81c1c;
 }
 
-.name{
+.name {
     position: absolute;
     color: #ffffff;
     top: 6vh;
@@ -96,6 +95,7 @@ video {
     font-size: calc(2vh + 1.5vw);
     font-family: "Bebas Neue", sans-serif;
 }
+
 body {
     font-family: "Bebas Neue", sans-serif;
     background-color: #000000;
@@ -111,11 +111,10 @@ body {
     width: 50vw;
     position: relative;
     padding: 2vh;
-    margin: 0 auto; /* Centers the timeline horizontally */
+    margin: 0 auto;
     left: 10vw;
     top: 5vh;
 }
-
 
 .timeline-item {
     display: flex;
@@ -146,13 +145,13 @@ body {
 .timeline-content::before {
     content: '';
     position: absolute;
-    top: -7vh; /* Move the dot above the line */
+    top: -7vh;
     left: -7vw;
     width: 1.2vw;
     height: 2vh;
     background-color: #e81c1c;
     border-radius: 50%;
-    box-shadow: 0 0 3px #e81c1c, 0 0 20px #e81c1c, 0 0 30px #e87e61, 0 0 40px #e87e61; 
+    box-shadow: 0 0 3px #e81c1c, 0 0 20px #e81c1c, 0 0 30px #e87e61, 0 0 40px #e87e61;
 }
 
 .institution-name {
