@@ -311,7 +311,7 @@ video {
 /* Photo styling */
 .photo {
     position: absolute;
-    top: 15vh;
+    top: 10vh;
     left: 59vw;
     height: 70vh;
     width: 35vw;
