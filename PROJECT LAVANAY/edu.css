@@ -291,16 +291,17 @@ body {
     position: relative;
 }
 
+
 .timeline-content::before {
-    content: '';
-    position: absolute;
-    top: -7px; /* Move the dot above the line */
-    left: -9.5px;
-    width: 16px;
-    height: 16px;
-    background-color: #5c20a7;
-    border-radius: 50%;
-    box-shadow: 0 0 10px 3px #4e10ba, 0 0 20px #4e2793, 0 0 30px #5019a8, 0 0 40px #4a1a9c; 
+  content: '';
+  position: absolute;
+  top: -7px; /* Move the dot above the line */
+  left: -9.5px;
+  width: 16px;
+  height: 16px;
+  background-color: #5c20a7;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 3px #4e10ba, 0 0 20px #4e2793, 0 0 30px #5019a8, 0 0 40px #4a1a9c; 
 }
 
 .institution-name {
