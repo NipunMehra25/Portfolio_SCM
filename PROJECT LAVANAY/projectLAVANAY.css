@@ -573,4 +573,79 @@ body {
       transform: translate(-50%, -50%);
     }
   }
+
+  @media (max-width: 600px) {
+    html, body {
+      overflow: auto; /* ✅ Enable scrolling */
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .back-button {
+      position: relative;
+      margin: 20px auto;
+      display: block;
+      font-size: 16px;
+      padding: 10px 20px;
+      top: 87vh;
+      left: auto;
+    }
+  
+    .back-button-container {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .name {
+      position: relative;
+      text-align: center;
+      font-size: 24px;
+      margin: -3px auto;
+      top: -8vh;
+      left: auto;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      position: static;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 0;
+      background-color: rgba(0,0,0,0.8);
+      margin-left:50vw;
+    }
+  
+    .navbar a {
+      font-size: 16px;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .project1, .parallax-card {
+      position: static;
+      width: 90vw;
+      height: auto;
+      margin: 20px auto;
+      padding: 20px;
+    }
+  
+    .icon-box {
+      margin: 86px auto;
+    }
+  
+    .card-content h2 {
+      font-size: 20px;
+    }
+  
+    .card-content p {
+      font-size: 14px;
+    }
+  }
   
