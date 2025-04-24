@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
     cursor: url("starter-northern-lights-cursor.png"), auto;
 }
 
-*a{
+* a {
     cursor: url("starter-northern-lights-pointer.png"), auto;
 }
 
@@ -29,9 +29,15 @@ video {
 }
 
 @keyframes blurEffect {
-    0% { opacity: 0; }
-    25% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .content {
