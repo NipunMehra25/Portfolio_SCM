@@ -23,16 +23,13 @@ body {
 }
 
 
-/* Positioning for the 3D model from Spline */
-#model {
-  position: absolute;
-}
+
 
 /* Main content container with blur animation on load */
 .content {
   height: 100%;
   width: 100%;
-  animation: blurEffect 2s linear;
+  animation: blurEffect 3s linear; 
 }
 
 /* Navigation bar styling and layout */
