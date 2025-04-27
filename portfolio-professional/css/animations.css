@@ -48,7 +48,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
   100% {
     transform: scale(1);
@@ -117,7 +117,7 @@
 .reveal-left {
   position: relative;
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-51px);
   transition: all 0.8s ease;
 }
 
@@ -129,7 +129,7 @@
 .reveal-right {
   position: relative;
   opacity: 0;
-  transform: translateX(50px);
+  transform: translateX(51px);
   transition: all 0.8s ease;
 }
 
@@ -224,6 +224,6 @@
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(24px, 0);
+    transform: translate(25px, 0);
   }
 }
