@@ -42,7 +42,7 @@ It includes a Home page, a Courses page, a Contact page, and social media links 
 ---
 
 
-## Contributors
+## 🌟 Contributors
 
 
 - **Moksh**  
