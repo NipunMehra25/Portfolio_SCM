@@ -1,17 +1,16 @@
 
-*{
-  padding:0%;
-  margin: 0%;
-  font-family: myfont;
-       cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+        cursor: url("Green Electric Animated--cursor--SweezyCursors.png"),auto; 
 }
 
 a{
     cursor: url("Green Electric Animated--pointer--SweezyCursors.png"),auto; 
 }
-  font-family: "Bebas Neue", sans-serif;
-    cursor: default;
-  }
+  
 
 
 /* Body styles: Full screen layout with 3D perspective and black background */
