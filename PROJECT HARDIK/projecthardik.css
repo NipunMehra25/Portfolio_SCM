@@ -19,7 +19,7 @@ html,body{
 }
 
 .content{
-    animation: blurEffect 2s linear;
+    animation: blurEffect 3s linear;
 }
 
 .video-background {
