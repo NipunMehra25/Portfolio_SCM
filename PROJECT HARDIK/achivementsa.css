@@ -23,10 +23,7 @@ body {
 }
 
 
-/* Positioning for the 3D model from Spline */
-#model {
-  position: absolute;
-}
+
 
 /* Main content container with blur animation on load */
 .content {
