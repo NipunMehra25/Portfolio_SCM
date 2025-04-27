@@ -229,6 +229,7 @@ video {
 
 .project2 ul li {
     font-family: "Bebas Neue", sans-serif;
+    top: 20%;
     margin-bottom: 10px; 
     font-size: calc(.8vh + .7vw);
 }
