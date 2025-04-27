@@ -43,7 +43,7 @@ video {
 .content{
     height: 100%;
     width: 100%;
-    animation: blurEffect 2s linear;
+    animation: blurEffect 3s linear;
 }
 
 .navbar{
