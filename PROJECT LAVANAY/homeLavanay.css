@@ -358,9 +358,9 @@ video {
     width: 320px;
     max-width: 80vw;
     padding: 14px;
-    border-radius: 24px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 20px 19px 30px rgba(111, 30, 224, 0.3), inset -20px -20px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* box-shadow: 20px 19px 30px rgba(111, 30, 224, 0.3), inset -20px -20px 5px rgba(255, 255, 255, 0.1); */
     transition: all 0.4s ease;
     z-index: 10;
     display: flex
@@ -375,17 +375,17 @@ video {
   max-height: 100%;
   object-fit: cover;
   border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+  /* border: 2px solid rgba(255, 255, 255, 0.15); */
+  /* box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3); */
 }
 
 
 .photo:hover {
 transform: scale(1.05) rotate(1.5deg);
-box-shadow: 0 15px 45px rgba(111, 30, 224, 0.5);
+/* box-shadow: 0 15px 45px rgba(111, 30, 224, 0.5); */
 filter:grayscale(0);
 backdrop-filter: none;
-box-shadow: 20px 18px 10px rgba(111, 30, 224, 0.3), 17px 20px 5px 0 rgba(255, 255, 255, 0.1) inset;;
+/* box-shadow: 20px 18px 10px rgba(111, 30, 224, 0.3), 17px 20px 5px 0 rgba(255, 255, 255, 0.1) inset;; */
 }
   
 .photo:hover img {
