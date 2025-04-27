@@ -43,7 +43,7 @@ video {
 .content{
     height: 100%;
     width: 100%;
-    animation: blurEffect 2s linear;
+    animation: blurEffect 3s linear;
 }
 
 .navbar{
@@ -82,6 +82,7 @@ video {
     width: 100%;
     left: 0;
     right: 0;
+    color: #ffffff
 }
 
 .navbar a:hover {

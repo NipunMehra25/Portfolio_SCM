@@ -30,7 +30,7 @@ themeSwitch.addEventListener("change", function () {
 })
 
 // Add theme transition class
-document.documentElement.style.setProperty("--transition-theme", "background-color 0.5s ease, color 0.5s ease")
+document.documentElement.style.setProperty("--transition-theme", "background-color 0.4s ease, color 0.4s ease")
 
 // Detect system theme preference changes
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
