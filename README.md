@@ -44,7 +44,8 @@ It includes a Home page, a Courses page, a Contact page, and social media links 
 
 ## 🌟 Contributors
 
-
+- **Nipun**  
+- **Lavanay**
 - **Moksh**  
 - **Jaspreet**  
 - **Hardik**
