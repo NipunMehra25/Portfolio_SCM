@@ -69,7 +69,7 @@ video {
     padding: 1.5vw;
     font-size: calc(1vh + 1vw);
     color: #ffffff;
-    animation: blureffect2 2s linear;
+    animation: blureffect2 3s linear;
 }
 
 .photo {
