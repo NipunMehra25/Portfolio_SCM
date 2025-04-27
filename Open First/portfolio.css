@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('standard\ \(2\).gif')  center center fixed; /* Change to your static background */
+    background: url('standard\ \(2\).gif')  center center fixed; 
     background-size: cover;
     font-family: 'Fjalla One', sans-serif;
 }
@@ -18,28 +18,28 @@ body {
 .button-container {
     display: flex;
     justify-content: center;
-    z-index: 1; /* Ensure button is above the overlay */
+    z-index: 1; 
 }
 
 .link {
-    background: linear-gradient(135deg, #7a5c9e, #4a3b6e); /* Gradient background */
+    background: linear-gradient(135deg, #7a5c9e, #4a3b6e);
     color: white;
-    padding: 15px 30px; /* Increase padding for larger button */
-    border-radius: 50px; /* More rounded corners */
+    padding: 15px 30px; 
+    border-radius: 50px; 
     text-align: center;
-    font-size: 22px; /* Larger text size */
-    font-weight: bold; /* Make text bold */
+    font-size: 22px; 
+    font-weight: bold; 
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transition effects */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
-    border: none; /* Remove border */
-    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+    border: none; 
+    cursor: pointer; 
 }
 
 .link:hover {
-    background: linear-gradient(135deg, #6c4e80, #3e2c4e); /* Darker gradient on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    background: linear-gradient(135deg, #6c4e80, #3e2c4e); 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); 
 }
 
 .fade-out {
@@ -53,9 +53,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('standard (2).gif') no-repeat center center; /* Set GIF as background */
+    background: url('standard (2).gif') no-repeat center center; 
     background-size: cover;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in; /* Smooth transition */
-    z-index: 0; /* Behind the button */
+    opacity: 0; 
+    transition: opacity 1s ease-in;
+    z-index: 0; 
 }
