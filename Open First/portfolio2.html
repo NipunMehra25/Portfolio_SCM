@@ -7,8 +7,223 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="portfolio1.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      font-family: 'Fjalla One', sans-serif;
+    }
+    
+    body {
+      background: url('standard (2).gif') no-repeat center center fixed;
+      background-size: cover;
+    }
+    
+    /* Wrapper centers everything vertically */
+    .wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 10px; /* Reduced padding */
+    }
+    
+    /* Container for cards */
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px; /* Reduced gap between cards */
+      max-width: 1200px; /* Adjusted width */
+      width: 100%;
+    }
+    
+    /* Card styles */
+    .back {
+      position: relative;
+      height: 380px; /* Slightly reduced height */
+      width: 180px; /* Even smaller width */
+      background-color: #1c1c1c;
+      border: 2px solid #5c4b8a;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(184, 182, 182, 0.25);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px; /* Smaller padding */
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .back:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(45deg, #5e2b91, #a55eb5);
+    }
+    
+    /* Glow effect */
+    .glow::before, .glow::after {
+      content: '';
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      top: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(128, 0, 128, 0.05));
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(10px);
+    }
+    
+    /* Text styling */
+    .header {
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #ffffff;
+      font-size: 20px; /* Smaller font size */
+      margin-bottom: 8px;
+    }
+    
+    h3 {
+      color: #eeeeee;
+      margin-bottom: 6px;
+    }
+    
+    .school-name {
+      font-weight: normal;
+      color: #84828e;
+      font-size: 16px; /* Smaller font size */
+    }
+    
+    .designation {
+      font-size: 12px; /* Smaller font size */
+      font-style: italic;
+      color: #cccccc;
+    }
+    
+    /* Buttons */
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    
+    .link {
+      background-color: #5c4b8a;
+      color: white;
+      width: 110px;
+      font-size: 14px; /* Smaller font size */
+      border-radius: 25px;
+      text-align: center;
+      padding: 8px 0;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .link a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .link:hover {
+      background-color: #4a3b6e;
+    }
+    
+    /* Responsive styles */
+    /* Large screens */
+    @media (min-width: 1200px) {
+      .container {
+        justify-content: center;
+      }
+    }
+    
+    /* Desktop and laptop */
+    @media (max-width: 1100px) {
+      .container {
+        max-width: 1000px;
+      }
+      .back {
+        width: 170px;
+      }
+    }
+    
+    /* Smaller laptops */
+    @media (max-width: 950px) {
+      .container {
+        max-width: 800px;
+      }
+      .back {
+        width: 150px;
+      }
+      h1 {
+        font-size: 18px;
+      }
+      .school-name {
+        font-size: 14px;
+      }
+    }
+    
+    /* Tablet */
+    @media (max-width: 800px) {
+      .container {
+        gap: 15px;
+      }
+      .back {
+        width: 140px;
+        height: 350px;
+      }
+      h1 {
+        font-size: 16px;
+      }
+      .school-name {
+        font-size: 12px;
+      }
+      .link {
+        font-size: 12px;
+        width: 90px;
+      }
+    }
+    
+    /* Smaller tablets */
+    @media (max-width: 700px) {
+      .container {
+        max-width: 500px;
+      }
+    }
+    
+    /* Mobile */
+    @media (max-width: 500px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      .back {
+        width: 100%;
+        max-width: 280px;
+        height: 350px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      .school-name {
+        font-size: 16px;
+      }
+      .link {
+        width: 100%;
+        font-size: 14px;
+      }
+    }
+
     /* Modal styles */
     .modal {
       display: none;
@@ -28,8 +243,8 @@
       background-color: #1c1c1c;
       border: 2px solid #5c4b8a;
       border-radius: 15px;
-      padding: 30px;
-      width: 300px;
+      padding: 25px;
+      width: 280px;
       text-align: center;
       position: relative;
       text-decoration: none;
@@ -37,21 +252,21 @@
 
     .modal h2 {
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-decoration: none;
     }
 
     .modal-btn {
       display: block;
       width: 100%;
-      padding: 12px;
-      margin: 15px 0;
+      padding: 10px;
+      margin: 12px 0;
       background-color: #5c4b8a;
       color: white;
       border: none;
       border-radius: 25px;
       font-family: 'Fjalla One', sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
       transition: background-color 0.3s ease;
       text-decoration: none;
@@ -74,19 +289,19 @@
     }
 
     .device-recommendation {
-      font-size: 12px;
+      font-size: 11px;
       color: #ffffff;
-      margin-top: 5px;
+      margin-top: 4px;
       font-style: italic;
       text-decoration: none;
     }
 
     .close-modal {
       position: absolute;
-      top: 10px;
-      right: 15px;
+      top: 8px;
+      right: 12px;
       color: #84828e;
-      font-size: 24px;
+      font-size: 22px;
       cursor: pointer;
     }
 
@@ -106,6 +321,20 @@
 <body>
   <div class="wrapper">
     <div class="container">
+      <!-- JASPREET -->
+      <div class="back glow">
+        <div class="header">
+          <h1><u>JASPREET</u></h1><br><br><br><br>
+          <h3 class="school-name">-Budha Dal Public School</h3><br><br><br>
+          <h3 class="school-name">-Budha Dal Public School</h3>
+        </div>
+        <div class="button-container">
+          <div class="link">
+            <a href="../PROJECT JASPREET/homeeffect2.html">Portfolio <i class="ri-user-fill"></i></a>
+          </div>
+        </div>
+      </div>
+
       <!-- LAVANAY -->
       <div class="back glow">
         <div class="header">
@@ -115,7 +344,7 @@
         </div>
         <div class="button-container">
           <div class="link">
-            <a href="../PROJECT LAVANAY/homeeffect.html">Portfolio <i class="ri-user-fill"></i></a>
+            <a href="../PROJECT LAVANAY/index.html">Portfolio <i class="ri-user-fill"></i></a>
           </div>
         </div>
       </div>
@@ -129,12 +358,11 @@
           <h3 class="school-name">-Shri Guru Gobind</h3>
         </div>
         <div class="button-container">
-          <div class="link" id="nipun-card" style="cursor: pointer;">
+          <div class="link">
             <span>Portfolio <i class="ri-user-fill"></i></span>
           </div>
         </div>
       </div>
-      
 
       <!-- MOKSH -->
       <div class="back glow">
@@ -143,12 +371,25 @@
           <h3 class="school-name">-Convent of Sacred Heart</h3><br><br><br>
           <h3 class="school-name">-Cecil Convent School</h3>
         </div>
-          <div class="button-container">
-            <div class="link">
-              <a href="../PROJECT MOKSH/homeeffecta.html">Portfolio <i class="ri-user-fill"></i></a>
-            </div>
+        <div class="button-container">
+          <div class="link">
+            <a href="../PROJECT MOKSH/homeeffecta.html">Portfolio <i class="ri-user-fill"></i></a>
+          </div>
         </div>
-        </a>
+      </div>
+
+      <!-- HARDIK -->
+      <div class="back glow">
+        <div class="header">
+          <h1><u>HARDIK</u></h1><br><br><br><br>
+          <h3 class="school-name">-Patel Public School</h3><br><br><br>
+          <h3 class="school-name">-Patel Public School</h3>
+        </div>
+        <div class="button-container">
+          <div class="link">
+            <a href="../PROJECT HARDIK/homeeffecta.html">Portfolio <i class="ri-user-fill"></i></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -159,21 +400,21 @@
       <span class="close-modal">&times;</span>
       <h2>Select View</h2>
       
-    <!-- Professional View (relative path) -->
-    <a href="../portfolio-professional/index.html">
-      <button class="modal-btn professional">
-        Professional View <i class="ri-smartphone-line"></i>
-        <div class="device-recommendation">Quick & Recommended for Phone</div>
-      </button>
-    </a>
+      <!-- Professional View (relative path) -->
+      <a href="../portfolio-professional/index.html">
+        <button class="modal-btn professional">
+          Professional View <i class="ri-smartphone-line"></i>
+          <div class="device-recommendation">Quick & Recommended for Phone</div>
+        </button>
+      </a>
 
-    <!-- Animated View (relative path) -->
-    <a href="../PROJECT NIPUN/homeeffect2.html">
-      <button class="modal-btn">
-        Animated View <i class="ri-computer-line"></i>
-        <div class="device-recommendation">Recommended for Laptop</div>
-      </button>
-    </a>
+      <!-- Animated View (relative path) -->
+      <a href="../PROJECT NIPUN/homeeffect2.html">
+        <button class="modal-btn">
+          Animated View <i class="ri-computer-line"></i>
+          <div class="device-recommendation">Recommended for Laptop</div>
+        </button>
+      </a>
     </div>
   </div>
 
