@@ -54,9 +54,9 @@ video {
 .navbar{
     display: flex;
     position: fixed;
-    top: 2vh;
-    left: 45vw;
-    width: 50vw;
+    top: 1vh;
+    left: 46vw;
+    width: 49vw;
     height: 10vh;
     align-items: center;
     justify-content: center;
