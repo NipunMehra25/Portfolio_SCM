@@ -42,10 +42,14 @@ It includes a Home page, a Courses page, a Contact page, and social media links 
 ---
 
 
-### 🤝 Contributing
+## Contributors
 
-Contributions are welcome!  
-If you have ideas to improve the template, feel free to fork the repo, make changes, and create a pull request.
+
+- **Moksh**  
+- **Jaspreet**  
+- **Hardik**
+
+
 
 ---
 
