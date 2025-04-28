@@ -59,7 +59,6 @@ It includes a Home page, a Courses page, a Contact page, and social media links 
 Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
-
 ## 📬 Contact
 
 Made with ❤️ by [Nipun Mehra](https://github.com/NipunMehra25) , [Lavanay](https://github.com/LavanayBhatia)
