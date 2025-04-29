@@ -208,7 +208,7 @@ video {
 }
 
 .navbar a:hover::after {
-    width: 100%;
+    width: 95%;
     left: 0;
     right: 0;
 }
