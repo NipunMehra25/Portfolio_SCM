@@ -22,7 +22,7 @@ html,body{
 .video-background {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100% ;
     height: 100%;
     z-index: -1;
     overflow: hidden;
@@ -37,7 +37,7 @@ video {
 .content{
     height: 100%;
     width: 100%;
-    animation: blurEffect 2s linear;
+    animation: blurEffect 2.1s linear;
 }
 
 
