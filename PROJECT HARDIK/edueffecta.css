@@ -20,7 +20,7 @@ section:before{
     bottom: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(#08d676,rgb(137, 61, 38));
+    background: linear-gradient(#08d676,rgb(136, 62, 39));
     mix-blend-mode: color;
     pointer-events: none;
 }
